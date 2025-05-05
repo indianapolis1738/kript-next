@@ -37,11 +37,11 @@ export const metadata: Metadata = {
     title: "Kript Africa | Buy, Sell & Trade Crypto Securely in Nigeria",
     description:
       "Join thousands of Nigerians using Kript to access USDT, BTC, ETH, and more. Simple, secure crypto trading platform built for Africa.",
-    url: "https://kript.africa", // Update this to your actual domain
+    url: "https://kript.africa", 
     siteName: "Kript Africa",
     images: [
       {
-        url: "logo/.png", // Provide a real OG image URL
+        url: "logo/.png", 
         width: 1200,
         height: 630,
         alt: "Kript Africa - Crypto made simple",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     description:
       "Easily buy and sell USDT, BTC, and other cryptocurrencies with Naira. Kript makes crypto simple and accessible to all Nigerians.",
     images: ["/logo.png"],
-    creator: "@kriptafrica", // Optional: update with real Twitter handle
+    creator: "@kriptafrica", 
   },
 };
 

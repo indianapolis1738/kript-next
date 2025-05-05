@@ -11,7 +11,7 @@ const About = () => {
                         Embracing Simplicity and Accessibility
                     </p>
                     <p className='flex justify-center items-center text-center mt-4 text-[16px] md:text-[20px]'>
-                        At the heart of Kript Africa's mission lies a dedication to making cryptocurrency accessible to all. Recognising the diverse needs and backgrounds of our users, we have developed a  user-friendly platform that empowers individuals, regardless of their level of expertise, to participate in the digital economy with confidence.
+                        At the heart of Kript Africa&apos;s mission lies a dedication to making cryptocurrency accessible to all. Recognising the diverse needs and backgrounds of our users, we have developed a  user-friendly platform that empowers individuals, regardless of their level of expertise, to participate in the digital economy with confidence.
                     </p>
                 </div>
                 <div className="max-w-7xl mx-auto mb-30">
@@ -44,7 +44,7 @@ const About = () => {
                         </p>
                         <p className='flex justify-center items-center mt-4 text-[16px] md:text-[20px]'>
                         Kript is a cutting-edge cryptocurrency trading platform that seamlessly combines innovation with accessibility.
-                        Whether you're a seasoned crypto enthusiast or a newcomer to the digital asset space, Kript offers a user-friendly experience for buying, selling, and holding a diverse range of cryptocurrencies.
+                        Whether you&apos;re a seasoned crypto enthusiast or a newcomer to the digital asset space, Kript offers a user-friendly experience for buying, selling, and holding a diverse range of cryptocurrencies.
                         </p>
                     </div>
                 </div>

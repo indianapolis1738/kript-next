@@ -69,7 +69,7 @@ const Bill = () => {
                         More than just bills
                     </h3>
                     <p className="text-black text-sm md:text-base max-w-xl mx-auto">
-                        With Kript, you're not just paying bills — you're unlocking the full power of crypto in daily life. Shop, save, and spend with ease.
+                        With Kript, you&apos;re not just paying bills — you&apos;re unlocking the full power of crypto in daily life. Shop, save, and spend with ease.
                     </p>
                 </div>
 
