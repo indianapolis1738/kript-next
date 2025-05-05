@@ -27,7 +27,7 @@ const FAQ = () => {
           </button>
           {open[0] && (
             <p className="text-[#003399] mb-2 ml-2">
-              With Instant Buy/Sell, your order goes through in a few seconds. We're reliable like that!
+              With Instant Buy/Sell, your order goes through in a few seconds. We&apos;re reliable like that!
             </p>
           )}
         </div>
@@ -81,7 +81,7 @@ const swap = () => {
           Buy & Sell crypto <br />Instantly
         </h2>
         <p className="text-center mb-10 md:max-w-[50%] mx-auto">
-          Depending on where you are, the stress of buying crypto could drive you nuts. We're here to change that.
+          Depending on where you are, the stress of buying crypto could drive you nuts. We&apos;re here to change that.
         </p>
         <div className="relative">
           <div className="bottom-2 motion-safe:animate-bounce absolute left-2 hidden md:block">
@@ -125,7 +125,7 @@ const swap = () => {
             <img src="/support1.png" alt="24/7 Support" className="h-12 mb-3" />
             <h3 className="font-semibold text-[#003399] mb-2">24/7 Support</h3>
             <p className="text-[#003399] text-center text-[15px]">
-              Even if the sky is falling or our favorite show is on, we're always here to help.
+              Even if the sky is falling or our favorite show is on, we&apos;re always here to help.
             </p>
           </div>
         </div>
@@ -151,7 +151,7 @@ const swap = () => {
             <img src='/speed.png' alt="Speed" className="h-16 mb-2" />
             <h2 className="md:text-[20px] font-semibold text-[#DFEFFE]">Speed</h2>
             <p className="text-[#DFEFFE] text-center mt-2">
-              Enjoy speed and ease with Kript's digital wallet, swap between assets without hassle.
+              Enjoy speed and ease with Kript&apos;s digital wallet, swap between assets without hassle.
             </p>
           </div>
           <div className="md:w-1/4 mb-8 flex flex-col items-center">

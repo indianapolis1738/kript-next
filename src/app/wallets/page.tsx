@@ -23,7 +23,7 @@ const Wallets = () => {
                         <img src="/step2.png" alt="Easy to Use" className="h-14 mb-2" />
                         <h3 className="font-semibold text-black mb-1">User-Friendly</h3>
                         <p className="text-black text-center text-sm">
-                            Effortlessly send, receive, and manage your crypto with Kript's intuitive interface.
+                            Effortlessly send, receive, and manage your crypto with Kript&apos;s intuitive interface.
                         </p>
                     </div>
                     <div className="flex flex-col items-center border shadow-2 rounded-2xl p-8 border-[#DFEFFE]">

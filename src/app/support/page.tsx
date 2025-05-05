@@ -9,7 +9,7 @@ const support = () => {
             <div className="">
                 <div className="max-w-5xl mx-auto px-4 py-20 md:bg-[url(/rocket.png)] bg-no-repeat bg-top-right bg-size-contain mt:mt-20">
                     <p className="mt-2 text-[35px] md:text-[40px] font-bold text-center">
-                        We're here to help you
+                        We&apos;re here to help you
                     </p>
                     <p className='flex justify-center items-center text-center mt-4 text-[16px] md:text-[20px]'>
                         Get in touch with us for any questions, feedback, or support. <br />
