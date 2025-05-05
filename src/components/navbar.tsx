@@ -130,7 +130,7 @@ const Navbar = () => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="w-6 h-6"
+            className={`w-10 h-10 ${isMenuOpen ? 'rotate-180deg' : ''}`}
           >
             <path
               strokeLinecap="round"
@@ -147,7 +147,7 @@ const Navbar = () => {
         ? 'opacity-100 translate-y-0'
         : 'opacity-0 -translate-y-2 pointer-events-none'
         }`}>
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 mt-2">
           <ul className="space-y-4 p-4 bg-[#DFEFFE] text-black rounded shadow-lg">
             <li className="relative">
               <div

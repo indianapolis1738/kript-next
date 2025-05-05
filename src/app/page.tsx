@@ -148,7 +148,7 @@ export default function Home() {
             className="mt-8 md:mt-0 w-full md:w-[90%] mx-auto h-[90%] p-4 md:p-15 lg:p-0"
           />
         </div>
-        <div className="w-full lg:w-1/2 mx-auto p-2 md:p-20">
+        <div className="w-[98%] lg:w-1/2 mx-auto p-3 md:p-20">
           <p className="text-[35px] md:text-[45px] font-bold break-words text-wrap">
             How to trade with <span className="text-[#003399]">confidence</span>
           </p>
