@@ -113,8 +113,12 @@ const Navbar = () => {
             <Link href="/support" className="hover:bg-[#DFEFFE] px-3 py-2 rounded">Support</Link>
           </li>
           <li>
+            <Link href="/markets" className="hover:bg-[#DFEFFE] px-3 py-2 rounded">Markets</Link>
+          </li>
+          <li>
             <Link href="https://blog.kript.africa" target='_blank' className="hover:bg-[#DFEFFE] px-3 py-2 rounded">Blog</Link>
           </li>
+
         </ul>
 
         {/* Download button*/}
@@ -193,6 +197,9 @@ const Navbar = () => {
             </li>
             <li>
               <Link href="/support" onClick={closeMenu} className="block px-3 py-2 hover:bg-[#DFEFFE]">Support</Link>
+            </li>
+            <li>
+              <Link href="/markets" onClick={closeMenu} className="block px-3 py-2 hover:bg-[#DFEFFE]">Markets</Link>
             </li>
             <li>
               <Link href="https://blog.kript.africa" target='_blank' onClick={closeMenu} className="block px-3 py-2 hover:bg-[#DFEFFE]">Blog</Link>
