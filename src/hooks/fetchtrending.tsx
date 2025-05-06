@@ -28,9 +28,8 @@ export const useTrending = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get("https://black-pearl-kripttechnology.koyeb.app/markets/tickers", { headers: { 'Cache-Control': 'no-cache' } });
-        console.log("Fetched at", new Date().toLocaleTimeString(), res.data.data.data);
-        const marketData: MarketData = res.data.data.data;
         // console.log("Fetched at", new Date().toLocaleTimeString(), res.data.data.data);
+        const marketData: MarketData = res.data.data.data;
         setTrending(marketData);
 
         // Sort by volume in descending order and get the top 5 symbols
