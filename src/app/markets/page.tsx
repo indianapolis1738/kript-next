@@ -4,134 +4,266 @@
 import React, { useState } from "react";
 import { useMarkets } from "@/hooks/fetchmarkets";
 import Link from "next/link";
-import { useTrending } from "@/hooks/fetchtrending";
 
+// Skeleton Loader Component
+const MarketSkeleton = () => (
+    <div className="p-4 max-w-7xl mx-auto animate-pulse">
+        <div className="mb-6">
+            <div className="h-10 w-1/3 bg-[#DFEFFE] rounded mb-2" />
+            <div className="h-4 w-1/2 bg-[#DFEFFE] rounded" />
+        </div>
+        <div className="hidden md:block w-full bg-gradient-to-r from-[#bfd0f5] to-[#DFEFFE] p-4 mt-10 rounded-2xl mb-8">
+            <div className="flex flex-row gap-6 justify-between items-center mt-10">
+                {[...Array(5)].map((_, i) => (
+                    <div key={i} className="bg-white p-3 rounded-lg shadow-sm border border-gray-200 w-6/12 flex flex-col gap-4">
+                        <div className="h-4 w-1/2 bg-[#DFEFFE] rounded mb-2" />
+                        <div className="h-3 w-1/3 bg-[#DFEFFE] rounded" />
+                    </div>
+                ))}
+            </div>
+        </div>
+        <div className="flex flex-col md:flex-row justify-between md:items-center mt-4 md:mt-10 gap-4 p-2 md:gap-20">
+            <div className="flex justify-between items-center flex-row w-full md:w-1/3 border border-[#626C70] p-2 rounded-[6px] md:ml-auto">
+                <div className="h-4 w-4 bg-[#DFEFFE] rounded mr-2" />
+                <div className="h-4 w-3/4 bg-[#DFEFFE] rounded" />
+                <div className="h-4 w-4 bg-[#DFEFFE] rounded ml-2" />
+            </div>
+        </div>
+        <div className="w-full mt-5 md:mt-10">
+            <table className="w-full table-auto border border-[#E4E7EC] rounded-2xl overflow-hidden text-start text-xs md:text-sm">
+                <thead className="bg-[#F9FAFB] text-[#475467] text-left">
+                    <tr>
+                        <th className="px-2 py-3 md:px-6 md:py-4 font-medium">Coin</th>
+                        <th className="px-2 py-3 md:px-6 md:py-4 font-medium">Price</th>
+                        <th className="px-2 py-3 md:px-6 md:py-4 font-medium">Change</th>
+                        <th className="px-2 py-3 md:px-6 md:py-4 font-medium">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {[...Array(8)].map((_, i) => (
+                        <tr key={i} className="hover:bg-[#F9FAFB] transition-all">
+                            <td className="px-2 py-3 md:px-6 md:py-4">
+                                <div className="h-4 w-16 bg-[#DFEFFE] rounded" />
+                            </td>
+                            <td className="px-2 py-3 md:px-6 md:py-4">
+                                <div className="h-4 w-12 bg-[#DFEFFE] rounded" />
+                            </td>
+                            <td className="px-2 py-3 md:px-6 md:py-4">
+                                <div className="h-4 w-10 bg-[#DFEFFE] rounded" />
+                            </td>
+                            <td className="px-2 py-3 md:px-6 md:py-4">
+                                <div className="h-7 w-16 bg-[#003399] rounded" />
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    </div>
+);
+
+const ITEMS_PER_PAGE = 10;
 
 const Page = () => {
-
-    //for market datas and search query
     const { market, loading, error } = useMarkets();
     const [searchQuery, setSearchQuery] = useState("");
+    const [page, setPage] = useState(1);
 
-    //for trending assets
-    const { trending } = useTrending()
-
-
-
-    if (loading) return <p className="max-w-6xl mx-auto text-center">Loading...</p>;
+    if (loading) return <MarketSkeleton />;
     if (error) return <p className="max-w-6xl mx-auto text-center">{error}</p>;
+
+    const getCoinIconPath = (symbol: string) => {
+        const coin = symbol.replace("usdt", "").replace("ngn", "").toLowerCase();
+        return `/icons/${coin}.png`;
+    };
+
+
+    // Filter and slice data for pagination, filter out last price === 0
+    const filteredMarkets = market
+        ? Object.entries(market)
+            .filter(([symbol]) => symbol.includes("usdt"))
+            .filter(([, { ticker }]) => parseFloat(ticker.last) !== 0)
+            .sort(([, { ticker: a }], [, { ticker: b }]) => parseFloat(b.last) - parseFloat(a.last))
+            .filter(([symbol]) => symbol.toLowerCase().includes(searchQuery))
+        : [];
+
+    const totalPages = Math.ceil(filteredMarkets.length / ITEMS_PER_PAGE);
+    const paginatedMarkets = filteredMarkets.slice(
+        (page - 1) * ITEMS_PER_PAGE,
+        page * ITEMS_PER_PAGE
+    );
 
     return (
         <div className="p-4 max-w-7xl mx-auto">
-            <div className="">
-                <h1 className="justify-center items-center text-black font-poppins font-semibold text-[25px] md:text-[28px] lg:text-[60px] leading-[48px] md:leading-[100px]">
-                    Market
+            {/* Header */}
+            <div className="mb-6">
+                <h1 className="text-center font-poppins font-bold text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] text-[#003399] leading-tight">
+                    Market Overview
                 </h1>
-                <p className="text-[14px] md:text-[20px] text-[#626C70]">
-                    Get the latest Market update here on Kript
+                <p className="text-center text-[15px] md:text-[18px] text-[#626C70]">
+                    Get the latest market updates and trends on Kript. Track your favorite coins and trade with ease.
                 </p>
             </div>
 
-            <div className="hidden md:block w-full bg-linear-to-r from-[#bfd0f5] to-[#DFEFFE] p-4 mt-10 rounded-2xl">
-                <p className="text-[#626C70]">Trending assets</p>
-
-                <div className="flex flex-row gap-6 justify-between items-center mt-10" >
-                    {trending &&
-                        Object.entries(trending).slice(0, 5).map(([symbol, { ticker }]) => {
-                            return (
-                                <div key={symbol}
-                                    className="bg-white p-3 rounded-lg shadow-sm border border-gray-200 w-6/12 flex flex-col gap-6"
-                                >
-                                    <p className="text-sm font-semibold">{symbol.replace("usdt", "").toUpperCase()}</p>
-                                    <p className="text-xs text-gray-600">${parseFloat(ticker.last).toFixed(4)}</p>
-
-                                </div>
-                            );
-                        })}
+            {/* Trending Assets */}
+            <div className="hidden md:block w-full bg-gradient-to-r from-[#bfd0f5] to-[#DFEFFE] p-6 mt-10 rounded-2xl shadow mb-8">
+                <p className="text-[#003399] font-semibold mb-4">Trending Assets</p>
+                <div className="flex flex-row flex-wrap gap-4 justify-between items-center">
+                    {market &&
+                        Object.entries(market)
+                            .slice(20, 25)
+                            .map(([symbol, { ticker }]) => {
+                                const iconPath = `/icons/${symbol.replace("usdt", "").replace("ngn", "").toLowerCase()}.png`;
+                                return (
+                                    <div
+                                        key={symbol}
+                                        className="bg-white p-4 rounded-xl shadow border border-[#DFEFFE] min-w-[150px] flex flex-col items-center"
+                                    >
+                                        <img
+                                            src={iconPath}
+                                            alt={`${symbol} icon`}
+                                            className="w-8 h-8 mb-2 rounded-[100%] border border-[#DFEFFE]"
+                                            onError={(e) => {
+                                                e.currentTarget.src = "/yuan.png"; // fallback icon
+                                            }}
+                                        />
+                                        <span className="text-base font-bold text-[#003399]">
+                                            {symbol.replace("usdt", "").replace("ngn", "").toUpperCase()}
+                                        </span>
+                                        <span className="text-xs text-[#626C70]">
+                                            ${parseFloat(ticker.last).toFixed(4)}
+                                        </span>
+                                    </div>
+                                );
+                            })}
                 </div>
             </div>
 
+            {/* Search Bar */}
             <div className="flex flex-col md:flex-row justify-between md:items-center mt-4 md:mt-10 gap-4 p-2 md:gap-20">
-                {/* <div className="flex flex-row justify-start gap-6 items-center w-full md:w-1/2">
-                    <p className="p-1.5 md:p-2 bg-[#F0F2F9] rounded-[10px]">Popular</p>
-                    <p className="p-1.5 md:p-2 bg-[#F0F2F9] rounded-[10px]">Gainers</p>
-                    <p className="p-1.5 md:p-2 bg-[#F0F2F9] rounded-[10px]">Losers</p>
-                </div> */}
-                <div className="flex justify-between items-center flex-row w-full md:w-1/3 border border-[#626C70] transition-all duration-200 focus-within:border-[#1C274C] focus-within:shadow-md focus-within:border-[2px] p-2 rounded-[6px] md:ml-auto">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.16699 0.666016C4.02486 0.666016 0.666992 4.02388 0.666992 8.16602C0.666992 12.3082 4.02486 15.666 8.16699 15.666C9.93784 15.666 11.5653 15.0523 12.8484 14.0259L15.9111 17.0886C16.2365 17.414 16.7641 17.414 17.0896 17.0886C17.415 16.7632 17.415 16.2355 17.0896 15.9101L14.0269 12.8474C15.0533 11.5644 15.667 9.93686 15.667 8.16602C15.667 4.02388 12.3091 0.666016 8.16699 0.666016ZM2.33366 8.16602C2.33366 4.94435 4.94533 2.33268 8.16699 2.33268C11.3887 2.33268 14.0003 4.94435 14.0003 8.16602C14.0003 11.3877 11.3887 13.9993 8.16699 13.9993C4.94533 13.9993 2.33366 11.3877 2.33366 8.16602Z" fill="#667185" />
+                <div className="flex items-center w-full md:w-1/3 border border-[#626C70] transition-all duration-200 focus-within:border-[#003399] focus-within:shadow-md focus-within:border-[2px] p-2 rounded-[6px] md:ml-auto bg-white">
+                    <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="mr-2"
+                    >
+                        <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M8.16699 0.666016C4.02486 0.666016 0.666992 4.02388 0.666992 8.16602C0.666992 12.3082 4.02486 15.666 8.16699 15.666C9.93784 15.666 11.5653 15.0523 12.8484 14.0259L15.9111 17.0886C16.2365 17.414 16.7641 17.414 17.0896 17.0886C17.415 16.7632 17.415 16.2355 17.0896 15.9101L14.0269 12.8474C15.0533 11.5644 15.667 9.93686 15.667 8.16602C15.667 4.02388 12.3091 0.666016 8.16699 0.666016ZM2.33366 8.16602C2.33366 4.94435 4.94533 2.33268 8.16699 2.33268C11.3887 2.33268 14.0003 4.94435 14.0003 8.16602C14.0003 11.3877 11.3887 13.9993 8.16699 13.9993C4.94533 13.9993 2.33366 11.3877 2.33366 8.16602Z"
+                            fill="#667185"
+                        />
                     </svg>
-                    <input type="search" name="search" id="search-coin" className="w-[85%] border-none focus:outline-none focus:ring-0" placeholder="Search pair"
+                    <input
+                        type="search"
+                        name="search"
+                        id="search-coin"
+                        className="w-full border-none focus:outline-none focus:ring-0 bg-transparent text-[#003399] placeholder-[#626C70]"
+                        placeholder="Search pair"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value.toLowerCase())}
                     />
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.35891 6.47406C7.11483 6.22998 6.7191 6.22998 6.47503 6.47406C6.23095 6.71814 6.23095 7.11387 6.47503 7.35794L8.11643 8.99935L6.47504 10.6407C6.23097 10.8848 6.23097 11.2805 6.47504 11.5246C6.71912 11.7687 7.11485 11.7687 7.35893 11.5246L9.00031 9.88323L10.6417 11.5246C10.8858 11.7687 11.2815 11.7687 11.5256 11.5246C11.7696 11.2805 11.7696 10.8848 11.5256 10.6407L9.88419 8.99935L11.5256 7.35796C11.7697 7.11388 11.7697 6.71816 11.5256 6.47408C11.2815 6.23 10.8858 6.23 10.6417 6.47408L9.00031 8.11546L7.35891 6.47406Z" fill="#1C274C" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.00033 0.0410156C4.05278 0.0410156 0.0419922 4.0518 0.0419922 8.99935C0.0419922 13.9469 4.05278 17.9577 9.00033 17.9577C13.9479 17.9577 17.9587 13.9469 17.9587 8.99935C17.9587 4.0518 13.9479 0.0410156 9.00033 0.0410156ZM1.29199 8.99935C1.29199 4.74215 4.74313 1.29102 9.00033 1.29102C13.2575 1.29102 16.7087 4.74215 16.7087 8.99935C16.7087 13.2565 13.2575 16.7077 9.00033 16.7077C4.74313 16.7077 1.29199 13.2565 1.29199 8.99935Z" fill="#1C274C" />
-                    </svg>
                 </div>
             </div>
 
-            <div className="w-full mt-5 md:mt-10">
-                <table className="w-full table-auto border border-[#E4E7EC] rounded-2xl overflow-hidden text-start text-xs md:text-sm">
-                    <thead className="bg-[#F9FAFB] text-[#475467] text-left">
+            {/* Market Table */}
+            <div className="w-full mt-5 md:mt-10 overflow-x-auto">
+                <table className="w-full table-auto border border-[#536b95] rounded-2xl overflow-hidden text-start text-xs md:text-sm bg-white shadow">
+                    <thead className="bg-[#F9FAFB] text-[#003399] text-left">
                         <tr>
-                            <th className="px-2 py-3 md:px-6 md:py-4 font-medium">Coin</th>
-                            <th className="px-2 py-3 md:px-6 md:py-4 font-medium">Price</th>
-                            <th className="px-2 py-3 md:px-6 md:py-4 font-medium">Change</th>
-                            <th className="px-2 py-3 md:px-6 md:py-4 font-medium">Action</th>
+                            <th className="px-2 py-3 md:px-6 md:py-4 font-semibold">Coin</th>
+                            <th className="px-2 py-3 md:px-6 md:py-4 font-semibold">Price</th>
+                            <th className="px-2 py-3 md:px-6 md:py-4 font-semibold">Change</th>
+                            <th className="px-2 py-3 md:px-6 md:py-4 font-semibold hidden md:table-cell">Action</th>
                         </tr>
                     </thead>
                     <tbody className="text-[#1D2939] divide-y divide-[#E4E7EC]">
-                        {market && Object.entries(market)
-                            .filter(([symbol]) => symbol.includes("usdt"))
-                            .filter(([symbol]) =>
-                                symbol.toLowerCase().includes(searchQuery)
-                            )
-                            .length > 0 ? (
-                            Object.entries(market)
-                                .filter(([symbol]) => symbol.includes("usdt"))
-                                .filter(([symbol]) =>
-                                    symbol.toLowerCase().includes(searchQuery)
-                                )
-                                .map(([symbol, { ticker }]) => {
-                                    const open = parseFloat(ticker.open);
-                                    const last = parseFloat(ticker.last);
-                                    const difference = (last - open).toFixed(2);
-                                    const isPositive = parseFloat(difference) > 0;
+                        {paginatedMarkets.length > 0 ? (
+                            paginatedMarkets.map(([symbol, { ticker }]) => {
+                                const open = parseFloat(ticker.open);
+                                const last = parseFloat(ticker.last);
+                                const difference = (last - open).toFixed(2);
+                                const percentage = ((Number(difference) / Number(open)) * 100).toFixed(2);
+                                const isPositive = parseFloat(difference) > 0;
+                                const iconPath = getCoinIconPath(symbol);
 
-                                    return (
-                                        <tr key={symbol} className="hover:bg-[#F9FAFB] transition-all">
-                                            <td className="px-2 py-3 md:px-6 md:py-4 font-medium">{symbol.replace("usdt", "").toUpperCase()}</td>
-                                            <td className="px-2 py-3 md:px-6 md:py-4">${last}</td>
-                                            <td
-                                                className={`px-2 py-3 md:px-6 md:py-4 font-semibold ${isPositive ? "text-green-600" : "text-red-500"}`}
+                                return (
+                                    <tr key={symbol} className="hover:bg-[#F0F6FF] transition-all">
+                                        <td className="px-2 py-4 md:px-6 md:py-5 font-bold flex items-center justify-start gap-2">
+                                            <div className="flex flex-row justify-center items-center gap-2 md:gap-4">
+                                            <img
+                                                src={iconPath}
+                                                alt={`${symbol} icon`}
+                                                className="w-6 md:w-10 h-6 md:h-10 mb-2 rounded-[100%] border border-[#DFEFFE]"
+                                                onError={(e) => {
+                                                    e.currentTarget.src = "/yuan.png"; // fallback icon
+                                                }}
+                                            />
+                                            <span className="uppercase text-[15px] md:text-[20px]">{symbol.replace("usdt", "").replace("ngn", "USDT")}</span>
+                                        </div>
+                                        </td>
+                                        <td className="px-2 py-3 md:px-6 md:py-4 font-mono">${last}</td>
+                                        <td
+                                            className={`px-2 py-3 md:px-6 md:py-4 font-semibold ${isPositive ? "text-green-600" : "text-red-500"
+                                                }`}
+                                        >
+                                            {isPositive ? `+${percentage}` : percentage}% <br />
+                                            <span
+                                                className={`text-[10px] hidden md:block ${isPositive ? "text-green-600" : "text-red-500"
+                                                    }`}
                                             >
-                                                {isPositive ? `+${difference}` : difference}
-                                            </td>
-                                            <td className="px-2 py-3 md:px-6 md:py-4">
-                                                <Link
-                                                    href="https://onelink.to/ff9jys"
-                                                    className="px-4 py-2 bg-[#003399] hover:bg-[#002080] text-white rounded-md text-xs md:text-sm"
-                                                >
-                                                    Trade
-                                                </Link>
-                                            </td>
-                                        </tr>
-                                    );
-                                })
+                                                {isPositive ? `+${difference}` : difference} USD
+                                            </span>
+                                        </td>
+                                        <td className="px-2 py-3 md:px-6 md:py-4 hidden md:table-cell">
+                                            <Link
+                                                href="https://onelink.to/ff9jys"
+                                                className="px-4 py-2 bg-[#003399] hover:bg-[#002080] text-white rounded-md text-xs md:text-sm font-semibold transition"
+                                            >
+                                                Trade
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                );
+                            })
                         ) : (
                             <tr>
-                                <td colSpan={4} className="text-center px-6 py-4">
-                                    No matching pairs.
+                                <td colSpan={4} className="text-center py-4">
+                                    <p>
+                                        Pair not found. Please try a different one.
+                                    </p>
                                 </td>
                             </tr>
                         )}
-
                     </tbody>
                 </table>
             </div>
 
+            {/* Pagination Controls */}
+            {totalPages > 1 && (
+                <div className="flex justify-center items-center gap-2 mt-8">
+                    <button
+                        onClick={() => setPage((p) => Math.max(1, p - 1))}
+                        disabled={page === 1}
+                        className="px-3 py-1 rounded bg-[#DFEFFE] text-[#003399] font-semibold disabled:opacity-50"
+                    >
+                        Prev
+                    </button>
+                    <span className="px-2 text-[#003399] font-semibold">
+                        Page {page} of {totalPages}
+                    </span>
+                    <button
+                        onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                        disabled={page === totalPages}
+                        className="px-3 py-1 rounded bg-[#DFEFFE] text-[#003399] font-semibold disabled:opacity-50"
+                    >
+                        Next
+                    </button>
+                </div>
+            )}
         </div>
     );
 };

@@ -14,10 +14,11 @@ export default function Home() {
               height={50}
               className="md:h-15 h-10 w-auto bg-[#DFEFFE] rounded-4xl p-2 px-6" />
           </p>
+          <p className="bg-transparent flex flex-col justify-center font-normal leading-normal items-center text-center text-[16px] md:text-[20px]">
+            Open a free account in minutes right from your phone and make your money go further.
+          </p>
         </h1>
-        <p className="bg-transparent flex flex-col justify-center items-center text-center text-[16px] md:text-[20px]">
-          Open a free account in minutes right from your phone and make your money go further.
-        </p>
+
         {/* Call to Action Button */}
         <div className="w-[70%] mx-auto flex flex-col md:flex-row justify-center gap-4 mt-10">
           <Link href={'https://onelink.to/ff9jys'}>
@@ -34,7 +35,7 @@ export default function Home() {
           <Image src="/phone-small.png" alt="Phone" width={500} height={500} className="lg:hidden max-w-6xl w-full mx-auto h-auto" />
         </div>
         <div className="w-11/12 m-auto md:w-[70%] mx-auto px-2 z-0">
-        <Marquee
+          <Marquee
             speed={25}
             className="flex flex-row gap-[20rem] justify-between mt-[-5%] pb-[2%] lg:max-w-[80%]"
           >
@@ -69,17 +70,17 @@ export default function Home() {
         </div>
       </div>
       <div className="h-auto bg-[#003399] bg-cover bg-no-repeat bg-center bg-[url('/waves.png')] mt-20">
-        <h1 className="text-center lg:w-4/6 m-auto p-8 pt-12 text-white text-[28px] md:text-[38px] lg:text-[40px] lg:max-w-7xl">
+        <h2 className="text-center lg:w-4/6 m-auto p-8 pt-12 text-white text-[28px] md:text-[38px] lg:text-[40px] lg:max-w-7xl">
           Your fully trusted platform to buy, trade and invest in crypto
-        </h1>
+        </h2>
         <div className="lg:flex block justify-between items-center md:w-[90%] px-2 mt-6 mx-auto max-w-7xl">
           <div className="lg:flex lg:flex-row w-[95%] md:w-[90%] mx-auto gap-2 mb-6">
             <div className="flex flex-col lg:flex-row lg:justify-between lg:w-2/3 m-2 lg:max-h-[25rem]">
               <div className="pb-6 pl-6 md:w-[70%] md:mx-auto lg:w-1/2 bg-white w-full h-[20rem] lg:h-[20rem] flex flex-col justify-end pt-20 lg:pl-5 lg:rounded-s-xl lg:rounded-none rounded-xl mb-4">
                 <img src={'/card.png'} alt="Card" className="w-14" /> <br />
-                <h1 className="text:[20px] font-semibold md:text-[30px] lg:text-[20px]">
+                <h2 className="text:[20px] font-semibold md:text-[30px] lg:text-[20px]">
                   Flexible transactions
-                </h1>
+                </h2>
                 <p className="text:[14px] break">
                   Get paid by Kript Africa in any currency, or combination of
                   currencies you want and buy in any currency you want.
@@ -95,9 +96,9 @@ export default function Home() {
             </div>
             <div className="md:w-[70%] md:mx-auto md:justify-end m-2 h-[20rem] lg:w-1/2 bg-white pb-6 pl-6 lg:h-[20rem] flex flex-col justify-end lg:justify-center pt-20 lg:pl-5 rounded-xl">
               <img src={'/lock.png'} alt="Card" className="w-14" /> <br />
-              <h1 className="text:[20px] md:text-[30px] font-semibold lg:text-[22px]">
+              <h2 className="text:[20px] md:text-[30px] font-semibold lg:text-[22px]">
                 Privacy
-              </h1>
+              </h2>
               <p className="text:[14px] break">
                 Your accounts privacy and security is our utmost priority so
                 your personal details will only be shared with your permission.
@@ -108,9 +109,9 @@ export default function Home() {
         <div className="lg:flex gap-4 block justify-between items-center w-[90%] md:w-[80%] px-2 mt-6 mx-auto max-w-6xl pb-[5%]">
           <div className="h-[20rem] flex flex-col justify-end pb-6 pl-6 rounded-xl mb-4 bg-white w-full md:w-[70%] md:mx-auto lg:w-1/3">
             <img src={'/security.png'} alt="Secure" className="w-14" /> <br />
-            <h1 className="text:[20px] md:text-[30px] font-semibold lg:text-[22px]">
+            <h2 className="text:[20px] md:text-[30px] font-semibold lg:text-[22px]">
               Secure Transactions
-            </h1>
+            </h2>
             <p className="text:[14px] break">
               Kript Africa is a secure and reliable platform that ensure safe
               transactions for users.
@@ -118,18 +119,18 @@ export default function Home() {
           </div>
           <div className="h-[20rem] flex flex-col justify-end pb-6 pl-6 rounded-xl mb-4 bg-white w-full md:w-[70%] md:mx-auto lg:w-1/3">
             <img src={"/naira.png"} alt="Currency Swap" className="w-14" /> <br />
-            <h1 className="text:[20px] md:text-[30px] font-semibold lg:text-[22px]">
+            <h2 className="text:[20px] md:text-[30px] font-semibold lg:text-[22px]">
               Fiat Deposits
-            </h1>
+            </h2>
             <p className="text:[14px] break">
               We accept deposits of major fiat currencies including USDT, NGN.
             </p>
           </div>
           <div className="h-[20rem] flex flex-col justify-end pb-6 pl-6 rounded-xl mb-4 bg-white w-full md:w-[70%] md:mx-auto lg:w-1/3">
             <img src={"support.png"} alt="24/7 Support" className="w-14" /> <br />
-            <h1 className="text:[20px] md:text-[30px] font-semibold lg:text-[22px]">
+            <h2 className="text:[20px] md:text-[30px] font-semibold lg:text-[22px]">
               24/ 7 Support
-            </h1>
+            </h2>
             <p className="text:[14px] break">
               Having an issue with trading. Our support team is readily at your
               service.
@@ -229,9 +230,9 @@ export default function Home() {
         <div className="bg-[#DFEFFE] pl-3 pr-3 h-13 md:h-20 flex items-center rounded-full">
           <img src={"logo.png"} alt="kript" className="h-6 md:h-10" />
         </div>
-        <h1 className="text-[18px] md:text-[30px] font-semibold">
+        <h2 className="text-[18px] md:text-[30px] font-semibold">
           The trading platform you can trust
-        </h1>
+        </h2>
       </div>
 
     </div>

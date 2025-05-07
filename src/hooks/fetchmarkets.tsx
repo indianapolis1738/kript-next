@@ -27,24 +27,36 @@ export const useMarkets = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("https://black-pearl-kripttechnology.koyeb.app/markets/tickers", { headers: { 'Cache-Control': 'no-cache' } });
-        // console.log("Fetched at", new Date().toLocaleTimeString(), res.data.data.data);
-        setMarket(res.data.data.data);
-      } catch {
-        setError("Failed to load market data");
+        const res = await axios.get(
+          "https://black-pearl-kripttechnology.koyeb.app/markets/tickers",
+          { headers: { 'Cache-Control': 'no-cache' } }
+        );
+
+        const responseData = res.data?.data?.data;
+
+        if (responseData) {
+          setMarket({ ...responseData }); // trigger re-render
+          setError("");
+        } else {
+          setError("Unable to fetch data");
+        }
+
+        console.log("Fetched at", new Date().toLocaleTimeString(), responseData);
+
+      } catch (error: any) {
+        setError(error?.message || "Unknown error");
+        console.error("Fetch error:", error);
       } finally {
         setLoading(false);
       }
     };
 
     fetchData();
+    const interval = setInterval(fetchData, 20000);
 
-    const interval = setInterval(() => {
-        fetchData();
-      }, 15000); // refetch every 15 seconds
-  
-      return () => clearInterval(interval);
+    return () => clearInterval(interval);
   }, []);
 
   return { market, loading, error };
 };
+

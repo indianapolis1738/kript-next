@@ -36,7 +36,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="lg:w-1/6 w-full pl-[5%] flex flex-col gap-6 pb-[2rem] items-start">
-          <h1 className="lg:text-[22px] text-[18px] font-semibold">COMPANY</h1>
+          <h2 className="lg:text-[22px] text-[18px] font-semibold">COMPANY</h2>
           <div className="flex flex-col gap-4">
             {/* <Link to="/markets">Market</Link> */}
             <Link href="/about">About Us</Link>
@@ -46,15 +46,15 @@ const Footer = () => {
           </div>
         </div>
         <div className="lg:w-1/6 w-full pl-[5%] flex flex-col gap-6 pb-[2rem] items-start">
-          <h1 className="lg:text-[22px] text-[18px] font-semibold">LEGAL</h1>
+          <h2 className="lg:text-[22px] text-[18px] font-semibold">LEGAL</h2>
           <div className="flex flex-col gap-4">
-            <Link href="/privacy-policy">Privacy policy</Link>
-            <Link href="/terms-and-condition">Terms of Use</Link>
+            <Link href="/privacy">Privacy policy</Link>
+            <Link href="/terms">Terms of Use</Link>
 
           </div>
         </div>
         <div className="lg:w-1/6 w-full pl-[5%] flex flex-col gap-6 items-start">
-          <h1 className="lg:text-[22px] text-[18px] font-semibold">SUPPORT</h1>
+          <h2 className="lg:text-[22px] text-[18px] font-semibold">SUPPORT</h2>
           <div className="flex flex-col gap-4">
             <a href="mailto:support@kript.africa">support@kript.africa</a>
           </div>
