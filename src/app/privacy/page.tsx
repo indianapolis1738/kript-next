@@ -12,7 +12,7 @@ const Privacy = () => {
             Privacy Policy
           </p>
           <p className="mt-[5%] text-[17px] lg:w-[60%] md:m-auto md:text-center">
-            At the heart of Kript Africa's mission lies a dedication to making
+            At the heart of Kript Africa&apos;s mission lies a dedication to making
             cryptocurrency accessible to all.
           </p>
         </div>
@@ -23,7 +23,7 @@ const Privacy = () => {
           <p>
             Welcome to Kript Africa Crypto Trading Platform, a cutting-edge
             platform for cryptocurrency trading and investment.At Kript Africa,
-            we prioritize the security and privacy of our users' information.
+            we prioritize the security and privacy of our users&apos; information.
             This Privacy Policy elucidates the meticulous collection,
             utilization, dissemination, and safeguarding of your data as you
             engage with our crypto trading services.
@@ -156,10 +156,10 @@ const Privacy = () => {
         </div>
         <div className="w-[100%] mb-[2%] p-[1%] mt-[5%]">
           <p className="mx-auto text-[#003399] text-start text-blue-k font-poppins font-semibold text-[25px] md:text-[30px]">
-            7. Children's Privacy:
+            7. Children&apos;s Privacy:
           </p>
           <p>
-            Kript Africa's services are exclusively designed for adults, and we
+            Kript Africa&apos;s services are exclusively designed for adults, and we
             do not knowingly collect data from individuals underthe age of 18.
           </p>
         </div>

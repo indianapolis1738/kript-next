@@ -14,9 +14,9 @@ const Terms = () => {
           <p>
             Welcome to Kript Africa, your premier digital infrastructure
             facilitating cryptocurrency transactions and blockchain technology
-            utilization across Nigeria. As a user of our platform, it's
+            utilization across Nigeria. As a user of our platform, it&apos;s
             imperative to acquaint yourself with the following comprehensive
-            Terms and Conditions ("Terms"), delineating the rules, obligations,
+            Terms and Conditions (&quot;Terms&quot;), delineating the rules, obligations,
             and guidelines governing your interaction with our services. By
             accessing or utilizing our digital infrastructure, you are expressly
             consenting to abide by these Terms in their entirety. We urge you to
@@ -43,7 +43,7 @@ const Terms = () => {
             <span className="mx-auto text-start font-poppins font-semibold text-[20px] md:text-[20px]">
               1.1 Purpose:
             </span>
-            Kript Africa's mission is to democratize access to cryptocurrency
+            Kript Africa&apos;s mission is to democratize access to cryptocurrency
             and blockchain technology across Nigeria, fostering financial
             inclusion, innovation, and economic empowerment. We aim to provide
             users with a seamless and intuitive platform to buy, sell, and trade
@@ -53,7 +53,7 @@ const Terms = () => {
             <span className="mx-auto text-start font-poppins font-semibold text-[20px] md:text-[20px]">
               1.2 Scope:
             </span>
-            These Terms and Conditions apply to all users of Kript Africa's
+            These Terms and Conditions apply to all users of Kript Africa&apos;s
             digital infrastructure, including registered account holders,
             visitors, and participants in any cryptocurrency-related activities
             facilitated by the platform. By accessing or utilizing our services,
@@ -76,7 +76,7 @@ const Terms = () => {
             confidentiality of your account credentials and for any activities
             conducted under your account. <br />
             <br />
-            Kript Africa's mission is to democratize access to cryptocurrency
+            Kript Africa&apos;s mission is to democratize access to cryptocurrency
             and blockchain technology across Nigeria, fostering financial
             inclusion, innovation, and economic empowerment. We aim to provide
             users with a seamless and intuitive platform to buy, sell, and trade
@@ -110,7 +110,7 @@ const Terms = () => {
             3. Compliance with Applicable Laws:
           </span>
           <p>
-            As a user of Kript Africa's platform, you pledge to adhere to all
+            As a user of Kript Africa&apos;s platform, you pledge to adhere to all
             relevant laws, regulations, and guidelines governing cryptocurrency
             transactions and financial activities in Nigeria. This includes but
             is not limited to compliance with anti-money laundering (AML) and
@@ -126,7 +126,7 @@ const Terms = () => {
             money laundering or other illicit activities. As such, users may be
             required to provide additional information or documentation to
             verify their identity or the source of funds used in cryptocurrency
-            transactions. Users agree to cooperate fully with Kript Africa's AML
+            transactions. Users agree to cooperate fully with Kript Africa&apos;s AML
             compliance efforts and to provide accurate and truthful information
             as requested. <br />
             <br />
@@ -147,7 +147,7 @@ const Terms = () => {
             4. Use of the Platform
           </span>
           <p>
-            Kript Africa's digital infrastructure is intended for lawful
+            Kript Africa&apos;s digital infrastructure is intended for lawful
             purposes only. Users agree to utilize the platform in accordance
             with these Terms and refrain from engaging in any activities that
             are illegal, fraudulent, or harmful to others. While we strive to
@@ -157,7 +157,7 @@ const Terms = () => {
             losses or damages resulting from such incidents. <br />
             <br />
             <span className="mx-auto text-start font-poppins font-semibold text-[20px] md:text-[20px]">
-              4.1 Permitted ActivitiesUsers are permitted to use Kript Africa's
+              4.1 Permitted ActivitiesUsers are permitted to use Kript Africa&apos;s
               platform for the following activities:
             </span>
             <br />
@@ -186,7 +186,7 @@ const Terms = () => {
             <br />
             <span className="mx-auto text-start font-poppins font-semibold text-[20px] md:text-[20px]">
               4.2 Prohibited Activities Users are prohibited from engaging in
-              the following activities on Kript Africa's platform:
+              the following activities on Kript Africa&apos;s platform:
             </span>
             <br />
             <br />
@@ -196,7 +196,7 @@ const Terms = () => {
                 terrorist financing, or other criminal offenses.{" "}
               </li>
               <li>
-                Unauthorized access to or use of other users' accounts or
+                Unauthorized access to or use of other users&apos; accounts or
                 personal information.
               </li>
               <li>
@@ -220,7 +220,7 @@ const Terms = () => {
             5. Financial Transactions:
           </span>
           <p>
-            One of the core functionalities of Kript Africa's platform is the
+            One of the core functionalities of Kript Africa&apos;s platform is the
             facilitation of cryptocurrency transactions. Users may buy, sell, or
             exchange various digital assets through our platform, subject to
             prevailing market conditions and transaction fees. It is essential
@@ -242,7 +242,7 @@ const Terms = () => {
             <span className="mx-auto text-start font-poppins font-semibold text-[20px] md:text-[20px]">
               5.2 Payment Methods
             </span>
-            Users may fund their accounts or make payments on Kript Africa's
+            Users may fund their accounts or make payments on Kript Africa&apos;s
             platform using various payment methods, including bank transfers,
             credit cards, or other electronic payment systems. Kript Africa
             reserves the right to accept or reject certain payment methods at
@@ -274,7 +274,7 @@ const Terms = () => {
             from users in connection with their use of the platform, including
             but not limited to: Contact information such as name, email address,
             and phone number. Identification documents such as government-issued
-            ID, passport, or driver's license. Financial information such as
+            ID, passport, or driver&apos;s license. Financial information such as
             bank account details or payment card information. Transaction
             history, account preferences, and other relevant data. <br />
             <br />
@@ -297,20 +297,20 @@ const Terms = () => {
             7. Intellectual Property Rights:
           </span>
           <p>
-            The content, features, and functionality of Kript Africa's digital
+            The content, features, and functionality of Kript Africa&apos;s digital
             infrastructure are protected by intellectual property laws,
             including copyright, trademark, and trade secret laws. Users
             acknowledge and agree that all proprietary rights to the platform
             belong to Kript Africa, and no part of the platform may be
             reproduced, modified, or distributed without prior written consent.
-            Any unauthorized use of Kript Africa's intellectual property may
+            Any unauthorized use of Kript Africa&apos;s intellectual property may
             result in legal action. <br />
             <br />
             <span className="mx-auto text-start font-poppins font-semibold text-[20px] md:text-[20px]">
               7.1 User Content
             </span>
             Users retain ownership of any content they create or submit to Kript
-            Africa's platform, including but not limited to comments, reviews,
+            Africa&apos;s platform, including but not limited to comments, reviews,
             or other user-generated content. By posting or sharing content on
             the platform, users grant Kript Africa a non-exclusive,
             royalty-free, perpetual, irrevocable, and sublicensable license to
@@ -342,10 +342,10 @@ const Terms = () => {
             its affiliates, partners, directors, officers, employees, agents,
             and licensors from and against any and all claims, liabilities,
             damages, losses, costs, expenses, or fees (including reasonable
-            attorneys' fees) arising from or related to their use of the
+            attorneys&apos; fees) arising from or related to their use of the
             platform, violation of these Terms, or infringement of any
             third-party rights. This indemnification obligation shall survive
-            the termination or expiration of these Terms and the user's use of
+            the termination or expiration of these Terms and the user&apos;s use of
             the platform.
           </p>
         </div>
@@ -394,7 +394,7 @@ const Terms = () => {
           </span>
           <p>
             Should users have any questions, concerns, or feedback regarding
-            these Terms or Kript Africa's platform, they are encouraged to
+            these Terms or Kript Africa&apos;s platform, they are encouraged to
             contact our customer support team at{" "}
             <Link href="mailto:support@kript.africa">support@kript.africa</Link>
             . We value user feedback and are committed to providing prompt and
