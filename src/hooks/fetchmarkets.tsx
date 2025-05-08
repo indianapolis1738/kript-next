@@ -27,7 +27,7 @@ export const useMarkets = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiUrl = process.env.BASE_URL || "https://test-backend.kript.africa/markets/tickers"; // Replace with your default URL
+        const apiUrl = process.env.BASE_URL || "https://livematter23.kript.africa/markets/tickers"; // Replace with your default URL
         if (!apiUrl) {
           throw new Error("API URL is not defined");
         }
