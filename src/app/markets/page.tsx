@@ -7,6 +7,7 @@ import Link from "next/link";
 
 // Skeleton Loader Component
 const MarketSkeleton = () => (
+    
     <div className="p-4 max-w-7xl mx-auto animate-pulse">
         <div className="mb-6">
             <div className="h-10 w-1/3 bg-[#DFEFFE] rounded mb-2" />

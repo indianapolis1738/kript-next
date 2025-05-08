@@ -28,7 +28,7 @@ export const useMarkets = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          "https://black-pearl-kripttechnology.koyeb.app/markets/tickers",
+          "https://test-backend.africa/markets/tickers",
           { headers: { 'Cache-Control': 'no-cache' } }
         );
 
