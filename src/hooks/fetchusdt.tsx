@@ -49,8 +49,11 @@ export const useMarkets = () => {
         console.log("Fetched at", new Date().toLocaleTimeString(), responseData);
 
       } catch (error) {
-        setError("Unknown error");
-        // console.error("Fetch error:", error);
+        if (error instanceof Error) {
+            setError(error.message);
+          } else {
+            setError("Unknown error");
+          };
       } finally {
         setLoading(false);
       }
