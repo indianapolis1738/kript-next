@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 export default function Home() {
   return (
     <div className="">
-      <div className="max-w-7xl bg-[url(/waves.png)] md:mt-20 p-4 md:w-[80%] mx-auto">
+      <div className="max-w-7xl bg-[url(/waves.png)] p-4 md:w-[80%] mx-auto">
         <h1 className="flex flex-col justify-center items-center text-black text-center font-poppins font-semibold text-[30px] md:text-[48px] lg:text-[64px] leading-[48px] md:leading-[100px] bg-[url(/rocket.png)] bg-no-repeat bg-size-[10%] bg-right-top">
           Simplify Your Transactions
           <p className="flex items-center gap-4">with
@@ -34,12 +34,21 @@ export default function Home() {
           <Image src="/phoneup1.png" alt="Phone" width={500} height={500} className="hidden lg:block max-w-6xl w-full mx-auto h-auto" />
           <Image src="/phone-small.png" alt="Phone" width={500} height={500} className="lg:hidden max-w-6xl w-full mx-auto h-auto" />
         </div>
-        <div className="w-11/12 m-auto md:w-[70%] mx-auto px-2 z-0">
+        <div className="mt-[-10%] max-w-7xl mx-auto md:w-[70%] flex flex-col px-2 z-0">
+          <h3 className="text-[16px] md:text-[20px] font-semibold mt-10">
+            You can trade:
+          </h3>
           <Marquee
             speed={25}
-            className="flex flex-row gap-[20rem] justify-between mt-[-5%] pb-[2%] lg:max-w-[80%]"
+            className="flex flex-row gap-[20rem] justify-between pb-[2%] lg:max-w-[80%]"
           >
-            <img src='/btc.png' alt="Bitcoin" className="mr-[5rem]" />
+            <Image
+              src='/btc.png'
+              alt="Bitcoin"
+              className="mr-[5rem]"
+              width={100}
+              height={200}
+            />
             <img src='usdt.png' alt="USDT" className="mr-[5rem]" />
             <img src='/bnb.png' alt="Binance coin" className="mr-[5rem]" />
             <img src='litecoin.png' alt="Litecoin" />

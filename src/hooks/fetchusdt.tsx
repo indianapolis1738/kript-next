@@ -27,7 +27,7 @@ export const useMarkets = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiUrl = process.env.BASE_URL || "https://livematter23.kript.africa/markets/tickers"; // Replace with your default URL
+        const apiUrl = process.env.BASE_URL || "https://livematter23.kript.africa/markets/ticker?currency_pair=usdtngn"; // Replace with your default URL
         if (!apiUrl) {
           throw new Error("API URL is not defined");
         }
@@ -41,11 +41,12 @@ export const useMarkets = () => {
         if (responseData) {
           setMarket({ ...responseData }); // trigger re-render
           setError("");
+          console.log(res.data);
         } else {
           setError("Unable to fetch data");
         }
 
-        // console.log("Fetched at", new Date().toLocaleTimeString(), responseData);
+        console.log("Fetched at", new Date().toLocaleTimeString(), responseData);
 
       } catch (error) {
         setError("Unknown error");

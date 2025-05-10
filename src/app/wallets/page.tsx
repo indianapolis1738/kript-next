@@ -2,7 +2,7 @@ import React from 'react';
 
 const Wallets = () => {
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12">
+        <div className="min-h-screen flex flex-col items-center justify-center px-4 pb-12">
             <div className="bg-white rounded-xl max-w-6xl w-full p-2 ">
                 <h1 className="text-[30px] md:text-[48px] lg:text-[64px] font-bold  mb-6 text-center ">
                     The Best & Most <br />Secure Wallet

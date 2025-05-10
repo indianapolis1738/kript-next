@@ -75,7 +75,7 @@ export default function RootLayout({
           <Navbar />
         </div> <br />
         <br /> <br />
-        {children}
+       <div className="mt-[5%]">{children}</div> 
         <Footer />
       </body>
     </html>

@@ -7,7 +7,7 @@ const support = () => {
     return (
         <div>
             <div className="">
-                <div className="max-w-5xl mx-auto px-4 py-20 md:bg-[url(/rocket.png)] bg-no-repeat bg-top-right bg-size-contain mt:mt-20">
+                <div className="max-w-5xl mx-auto px-4 pb-20 md:bg-[url(/rocket.png)] bg-no-repeat bg-top-right bg-size-contain">
                     <p className="mt-2 text-[35px] md:text-[40px] font-bold text-center">
                         We&apos;re here to help you
                     </p>

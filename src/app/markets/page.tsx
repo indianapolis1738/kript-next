@@ -7,7 +7,7 @@ import Link from "next/link";
 
 // Skeleton Loader Component
 const MarketSkeleton = () => (
-    
+
     <div className="p-4 max-w-7xl mx-auto animate-pulse">
         <div className="mb-6">
             <div className="h-10 w-1/3 bg-[#DFEFFE] rounded mb-2" />
@@ -172,13 +172,13 @@ const Page = () => {
 
             {/* Market Table */}
             <div className="w-full mt-5 md:mt-10 overflow-x-auto">
-                <table className="w-full table-auto border border-[#536b95] rounded-2xl overflow-hidden text-start text-xs md:text-sm bg-white shadow">
+                <table className="w-[98%] mx-auto mb-3 table-auto border border-[#536b95] rounded-2xl overflow-hidden text-start text-xs md:text-sm bg-white shadow">
                     <thead className="bg-[#F9FAFB] text-[#003399] text-left">
                         <tr>
-                            <th className="px-2 py-3 md:px-6 md:py-4 font-semibold">Coin</th>
-                            <th className="px-2 py-3 md:px-6 md:py-4 font-semibold">Price</th>
-                            <th className="px-2 py-3 md:px-6 md:py-4 font-semibold">Change</th>
-                            <th className="px-2 py-3 md:px-6 md:py-4 font-semibold hidden md:table-cell">Action</th>
+                            <th className="px-2 py-3 md:px-6 md:py-4 font-semibold uppercase text-[15px] md:text-[20px]">Coin</th>
+                            <th className="px-2 py-3 md:px-6 md:py-4 font-semibold uppercase text-[15px] md:text-[20px]">Price</th>
+                            <th className="px-2 py-3 md:px-6 md:py-4 font-semibold hidden md:table-cell uppercase text-[15px] md:text-[20px]">Change</th>
+                            <th className="px-2 py-3 md:px-6 md:py-4 font-semibold uppercase text-[15px] md:text-[20px]">Action</th>
                         </tr>
                     </thead>
                     <tbody className="text-[#1D2939] divide-y divide-[#E4E7EC]">
@@ -195,20 +195,26 @@ const Page = () => {
                                     <tr key={symbol} className="hover:bg-[#F0F6FF] transition-all">
                                         <td className="px-2 py-4 md:px-6 md:py-5 font-bold flex items-center justify-start gap-2">
                                             <div className="flex flex-row justify-center items-center gap-2 md:gap-4">
-                                            <img
-                                                src={iconPath}
-                                                alt={`${symbol} icon`}
-                                                className="w-6 md:w-10 h-6 md:h-10 mb-2 rounded-[100%] border border-[#DFEFFE]"
-                                                onError={(e) => {
-                                                    e.currentTarget.src = "/yuan.png"; // fallback icon
-                                                }}
-                                            />
-                                            <span className="uppercase text-[15px] md:text-[20px]">{symbol.replace("usdt", "").replace("ngn", "USDT")}</span>
-                                        </div>
+                                                <img
+                                                    src={iconPath}
+                                                    alt={`${symbol} icon`}
+                                                    className="w-8 md:w-10 h-8 md:h-10 rounded-[100%] border border-[#DFEFFE]"
+                                                    onError={(e) => {
+                                                        e.currentTarget.src = "/yuan.png"; // fallback icon
+                                                    }}
+                                                />
+                                                <span className="uppercase text-[15px] md:text-[20px]">{symbol.replace("usdt", "").replace("ngn", "USDT")}</span>
+                                            </div>
                                         </td>
-                                        <td className="px-2 py-3 md:px-6 md:py-4 font-mono">${last}</td>
+                                        <td className="px-2 md:px-6 md:py-4 py-3 font-mono text-[15px] md:text-[18px]">
+                                            ${last.toLocaleString()}
+                                            <span className={`px-2 py-3 md:px-6 md:py-4 text-[10px] md:text-[18px] table-cell md:hidden ${isPositive ? "text-green-600" : "text-red-500"
+                                                }`}>
+                                                {isPositive ? `+${percentage}` : percentage}%
+                                            </span>
+                                        </td>
                                         <td
-                                            className={`px-2 py-3 md:px-6 md:py-4 font-semibold ${isPositive ? "text-green-600" : "text-red-500"
+                                            className={`hidden md:table-cell px-2 py-3 md:px-6 md:py-4 text-[16px] md:text-[18px] ${isPositive ? "text-green-600" : "text-red-500"
                                                 }`}
                                         >
                                             {isPositive ? `+${percentage}` : percentage}% <br />
@@ -219,10 +225,10 @@ const Page = () => {
                                                 {isPositive ? `+${difference}` : difference} USD
                                             </span>
                                         </td>
-                                        <td className="px-2 py-3 md:px-6 md:py-4 hidden md:table-cell">
+                                        <td className="px-2 py-0 md:px-6 md:py-4">
                                             <Link
                                                 href="https://onelink.to/ff9jys"
-                                                className="px-4 py-2 bg-[#003399] hover:bg-[#002080] text-white rounded-md text-xs md:text-sm font-semibold transition"
+                                                className="px-4 py-2 bg-[#003399] hover:bg-[#002080] text-white rounded-md text-[16px] md:text-[18px] font-semibold transition"
                                             >
                                                 Trade
                                             </Link>
@@ -245,7 +251,7 @@ const Page = () => {
 
             {/* Pagination Controls */}
             {totalPages > 1 && (
-                <div className="flex justify-center items-center gap-2 mt-8">
+                <div className="flex justify-center items-center gap-2 mt-8 mb-8">
                     <button
                         onClick={() => setPage((p) => Math.max(1, p - 1))}
                         disabled={page === 1}

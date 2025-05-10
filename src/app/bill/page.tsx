@@ -4,7 +4,7 @@ import { Md4gPlusMobiledata } from 'react-icons/md'
 
 const Bill = () => {
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12">
+        <div className="min-h-screen flex flex-col items-center justify-center px-4">
             <div className="max-w-4xl w-full p-6 md:p-10">
                 <div className="flex flex-col items-center mb-6">
                     {/* <img src="/bill-icon.png" alt="Bill Icon" className="h-16 w-16 mb-2" /> */}

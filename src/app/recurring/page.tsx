@@ -12,7 +12,7 @@ const Recurring = () => {
         content="Buy crypto automatically with Kript's recurring payment feature. Set your schedule, fund your wallet, and we'll handle the rest—no market timing required."
       />
     </Head>
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 md:py-16">
+    <div className="min-h-screen flex flex-col items-center justify-center px-4">
       <div className=" max-w-5xl w-full p-2">
         <h1 className="text-[30px] md:text-[48px] lg:text-[64px] font-bold text-black text-center mb-6">
           Automate Your Crypto Journey

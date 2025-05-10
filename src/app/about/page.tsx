@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div>
             <div className="bg-[url(/waves.png)]">
-                <div className="max-w-7xl mx-auto px-4 py-10 md:bg-[url(/rocket.png)] bg-no-repeat bg-top-right bg-size-contain md:mt-20">
+                <div className="max-w-7xl mx-auto px-4 py-10 md:bg-[url(/rocket.png)] bg-no-repeat bg-top-right bg-size-contain ">
                     <h1 className="text-[20px] md:text-[25px] text-[#003399] font-bold text-center">About Us</h1>
                     <p className="mt-2 text-[35px] md:text-[40px] font-bold text-center">
                         Embracing Simplicity and Accessibility

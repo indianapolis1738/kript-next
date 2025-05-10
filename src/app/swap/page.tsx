@@ -73,7 +73,7 @@ const swap = () => {
     <div className="min-h-screen flex flex-col gap-12">
 
       {/* Why Kript Section */}
-      <div className="max-w-5xl mx-auto  px-4 py-10">
+      <div className="max-w-5xl mx-auto  px-4 pb-10">
         <div className="hidden md:block top-2 animate-bounce right-2 mt-5 absolute">
           <img src="/eth.svg" alt="eth" />
         </div>
