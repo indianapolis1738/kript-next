@@ -132,7 +132,7 @@ const Page = () => {
                                             {symbol.replace("usdt", "").replace("ngn", "").toUpperCase()}
                                         </span>
                                         <span className="text-xs text-[#626C70]">
-                                            ${parseFloat(ticker.last).toFixed(4)}
+                                            ${parseFloat(ticker.last).toLocaleString()}
                                         </span>
                                     </div>
                                 );

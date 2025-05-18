@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Buy, Sell & Trade Cryptocurrency in Nigeria | Kript Africa",
   description:
-    "Kript lets you buy, sell, and trade cryptocurrencies like USDT, Bitcoin, and Ethereum instantly using Naira. Secure, fast, and beginner-friendly crypto experience in Nigeria.",
+    "Kript lets you buy, sell, and trade cryptocurrencies like USDT, Bitcoin, and Ether instantly using Naira. Secure, fast, and friendly crypto experience in Nigeria.",
   keywords: [
     "buy crypto in Nigeria",
     "sell crypto in Nigeria",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "Kript Africa",
     images: [
       {
-        url: "logo/.png",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "Kript Africa - Crypto made simple",
@@ -58,8 +58,10 @@ export const metadata: Metadata = {
     images: ["/logo.png"],
     creator: "@kriptafrica",
   },
+  alternates: {
+    canonical: "https://kript.africa",
+  },
 };
-
 
 export default function RootLayout({
   children,
