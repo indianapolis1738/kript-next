@@ -14,12 +14,13 @@ type Ticker = {
 
 type MarketData = {
   [symbol: string]: {
+    last: string;
     at: number;
     ticker: Ticker;
   };
 };
 
-export const useMarkets = () => {
+export const useMarket = () => {
   const [market, setMarket] = useState<MarketData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");

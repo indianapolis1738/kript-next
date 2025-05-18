@@ -49,8 +49,8 @@ const Footer = () => {
           <div className="lg:w-2/6 w-fit pl-[5%] flex flex-col gap-6 pb-[2rem] items-start">
             <h2 className="lg:text-[22px] text-[18px] font-semibold">LEARN</h2>
             <div className="flex flex-col gap-4">
-              <Link href="/privacy">Buy USDT</Link>
-              <Link href="/terms">Buy Crypto</Link>
+              <Link href="/buy-usdt">Buy USDT</Link>
+              <Link href="/buy-crypto">Buy Crypto</Link>
 
             </div>
           </div>

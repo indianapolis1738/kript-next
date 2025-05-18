@@ -123,7 +123,7 @@ const Navbar = () => {
 
         {/* Download button*/}
         <div className="hidden md:flex">
-          <Link href="/download" className="bg-[#003399] text-white hover:bg-white hover:text-[#003399] hover:border-[.5px] px-4 py-2 rounded">Download</Link>
+          <Link href="https://onelink.to/ff9jys" className="bg-[#003399] text-white hover:bg-white hover:text-[#003399] hover:border-[.5px] px-4 py-2 rounded">Download</Link>
         </div>
 
 
