@@ -63,6 +63,8 @@ const MarketSkeleton = () => (
     </div>
 );
 
+
+//number of assets to display per page
 const ITEMS_PER_PAGE = 10;
 
 const Page = () => {
