@@ -81,13 +81,13 @@ const Navbar = () => {
                       Securely store and manage your crypto assets with Kript Africa.
                     </p>
                   </Link>
-                  <Link href="/exchange" className='block items-center justify-center px-10 py-10 rounded-2xl hover:bg-[#DFEFFE] gap-6'>
+                  {/* <Link href="/exchange" className='block items-center justify-center px-10 py-10 rounded-2xl hover:bg-[#DFEFFE] gap-6'>
                     <FaExchangeAlt size={39} color='#003399' /> <br />
                     <p className='text-[20px] font-bold text-[#003399]'>Exchange</p>
                     <p>
                       Exchange your crypto assets with ease and confidence on Kript Africa.
                     </p>
-                  </Link>
+                  </Link> */}
                   <Link href="/bill" className='block items-center justify-center px-10 py-10 rounded-2xl hover:bg-[#DFEFFE] gap-6'>
                     <FaMoneyBillTransfer size={39} color='#003399' /> <br />
                     <p className='text-[20px] font-bold text-[#003399]'>Bill Payment</p>
@@ -181,9 +181,9 @@ const Navbar = () => {
                 <li>
                   <Link href="/wallets" onClick={closeMenu} className="block px-4 py-2 hover:bg-[#DFEFFE]">Wallets</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="/exchange" onClick={closeMenu} className="block px-4 py-2 hover:bg-[#DFEFFE]">Exchange</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href="/bill" onClick={closeMenu} className="block px-4 py-2 hover:bg-[#DFEFFE]">Bill Payment</Link>
                 </li>

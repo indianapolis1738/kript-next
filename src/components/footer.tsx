@@ -59,8 +59,8 @@ const Footer = () => {
           <div className="lg:w-3/6 w-full pl-[5%] flex flex-col gap-6 pb-[2rem] items-start">
             <h2 className="lg:text-[22px] text-[18px] font-semibold">LEGAL</h2>
             <div className="flex flex-col gap-4">
-              <Link href="/privacy">Privacy policy</Link>
-              <Link href="/terms">Terms of Use</Link>
+              <Link href="/privacy-policy">Privacy policy</Link>
+              <Link href="/terms-and-conditions">Terms of Use</Link>
 
             </div>
           </div>
