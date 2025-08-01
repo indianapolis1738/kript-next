@@ -50,7 +50,7 @@ const Footer = () => {
             <h2 className="lg:text-[22px] text-[18px] font-semibold">LEARN</h2>
             <div className="flex flex-col gap-4">
               <Link href="/buy-usdt">Buy USDT</Link>
-              <Link href="/buy-crypto">Buy Crypto</Link>
+              {/* <Link href="/buy-crypto">Buy Crypto</Link> */}
 
             </div>
           </div>

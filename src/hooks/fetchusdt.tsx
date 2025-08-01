@@ -61,7 +61,7 @@ export const useMarket = () => {
     };
 
     fetchData();
-    const interval = setInterval(fetchData, 20000);
+    const interval = setInterval(fetchData, 20000); // 20 seconds
 
     return () => clearInterval(interval);
   }, []);
