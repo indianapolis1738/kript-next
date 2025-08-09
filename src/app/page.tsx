@@ -1,38 +1,89 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
+import { motion } from "framer-motion";
 
-export default function Home() {
+const Home = () => {
   return (
     <div className="">
-      <div className="max-w-7xl bg-[url(/waves.png)] p-4 md:w-[80%] mx-auto">
+      <motion.div
+        className="max-w-7xl bg-[url(/waves.png)] p-4 md:w-[80%] mx-auto"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <h1 className="flex flex-col justify-center items-center text-black text-center font-poppins font-semibold text-[30px] md:text-[48px] lg:text-[64px] leading-[48px] md:leading-[100px] bg-[url(/rocket.png)] bg-no-repeat bg-size-[10%] bg-right-top">
-          Simplify Your Transactions
-          <p className="flex items-center gap-4">with
-            <Image src='/logo.png' alt="Logo"
+          Simplify Your Crypto Transactions
+          <p className="flex items-center gap-4">
+            with
+            <Image
+              src="/logo.png"
+              alt="Logo"
               width={100}
               height={50}
-              className="md:h-15 h-10 w-auto bg-[#DFEFFE] rounded-4xl p-2 px-6" />
+              className="md:h-15 h-10 w-auto bg-[#DFEFFE] rounded-4xl p-2 px-6"
+            />
           </p>
           <p className="bg-transparent flex flex-col justify-center font-normal leading-normal items-center text-center text-[16px] md:text-[20px]">
-            Open a free account in minutes right from your phone and make your money go further.
+            Your gateway to spending, saving, and managing crypto without the
+            hassle.
           </p>
         </h1>
 
         {/* Call to Action Button */}
-        <div className="w-[70%] mx-auto flex flex-col md:flex-row justify-center gap-4 mt-10">
-          <Link href={'https://onelink.to/ff9jys'}>
-            <Image src="/app.png" alt="App Store" width={150} height={50} className="w-auto h-[70px] mx-auto md:w-auto md:h-[87px]" />
+        <motion.div
+          className="w-[70%] mx-auto flex flex-col md:flex-row justify-center gap-4 mt-10"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <Link href={"https://onelink.to/ff9jys"}>
+            <Image
+              src="/app.png"
+              alt="App Store"
+              width={150}
+              height={50}
+              className="w-auto h-[70px] mx-auto md:w-auto md:h-[87px]"
+            />
           </Link>
-          <Link href={'https://onelink.to/ff9jys'}>
-            <Image src="/play.png" alt="Google Play" width={150} height={50} className="w-auto h-[70px] mx-auto md:w-auto md:h-[87px]" />
+          <Link href={"https://onelink.to/ff9jys"}>
+            <Image
+              src="/play.png"
+              alt="Google Play"
+              width={150}
+              height={50}
+              className="w-auto h-[70px] mx-auto md:w-auto md:h-[87px]"
+            />
           </Link>
-        </div>
-      </div>
-      <div className="bg-gradient-to-t from-[#DFEFFE] from-70% via-transparent to-transparent">
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        className="bg-gradient-to-t from-[#DFEFFE] from-70% via-transparent to-transparent"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <div className="">
-          <Image src="/phoneup1.png" alt="Phone" width={500} height={500} className="hidden lg:block max-w-6xl w-full mx-auto h-auto" />
-          <Image src="/phone-small.png" alt="Phone" width={500} height={500} className="lg:hidden max-w-6xl w-full mx-auto h-auto" />
+          <Image
+            src="/phoneup1.png"
+            alt="Phone"
+            width={500}
+            height={500}
+            className="hidden lg:block max-w-6xl w-full mx-auto h-auto"
+          />
+          <Image
+            src="/phone-small.png"
+            alt="Phone"
+            width={500}
+            height={500}
+            className="lg:hidden max-w-6xl w-full mx-auto h-auto"
+          />
         </div>
         <div className="mt-[-10%] max-w-7xl mx-auto md:w-[70%] flex flex-col px-2 z-0">
           <h3 className="text-[16px] md:text-[20px] font-semibold mt-10">
@@ -43,27 +94,41 @@ export default function Home() {
             className="flex flex-row gap-[20rem] justify-between pb-[2%] lg:max-w-[80%]"
           >
             <Image
-              src='/btc.png'
+              src="/btc.png"
               alt="Bitcoin"
               className="mr-[5rem]"
               width={100}
               height={200}
             />
-            <img src='usdt.png' alt="USDT" className="mr-[5rem]" />
-            <img src='/bnb.png' alt="Binance coin" className="mr-[5rem]" />
-            <img src='litecoin.png' alt="Litecoin" />
+            <img src="usdt.png" alt="USDT" className="mr-[5rem]" />
+            <img src="/bnb.png" alt="Binance coin" className="mr-[5rem]" />
+            <img src="litecoin.png" alt="Litecoin" />
           </Marquee>
         </div>
-      </div>
-      <div className="flex flex-col lg:flex-row justify-center items-center gap-4 mt-10 max-w-7xl mx-auto">
+      </motion.div>
+
+      <motion.div
+        className="flex flex-col lg:flex-row justify-center items-center gap-4 mt-10 max-w-7xl mx-auto"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <div className="flex flex-col w-[90%] lg:w-[40%] mx-auto px-2 gap-8">
           <p className="text-[35px] md:text-[50px] font-bold break-words text-wrap">
-            <span className="text-[#003399]">Kript Africa</span> has all you need
+            <span className="text-[#003399]">Kript Africa</span> has all you
+            need
           </p>
           <p className="text-[16px] md:text-[20px] break-words text-wrap">
-            Kript Africa was designed to make cryptocurrency transactions faster, easier and safer for both newcomers and experts. Make easy transfers and withdrawals on Kript Africa, and keep track of all of your crypto transactions in one place.
+            Kript Africa was designed to make cryptocurrency transactions
+            faster, easier and safer for both newcomers and experts. Make easy
+            transfers and withdrawals on Kript Africa, and keep track of all of
+            your crypto transactions in one place.
           </p>
-          <Link href="/about" className="text-[16px] md:text-[20px] bg-[#003399] p-4 w-fit rounded-lg text-white">
+          <Link
+            href="/about"
+            className="text-[16px] md:text-[20px] bg-[#003399] p-4 w-fit rounded-lg text-white"
+          >
             Learn more
           </Link>
         </div>
@@ -77,7 +142,7 @@ export default function Home() {
             className="mt-8 md:mt-0 w-full md:w-[90%] mx-auto h-[90%] md:p-15"
           />
         </div>
-      </div>
+      </motion.div>
       <div className="h-auto bg-[#003399] bg-cover bg-no-repeat bg-center bg-[url('/waves.png')] mt-20">
         <h2 className="text-center lg:w-4/6 m-auto p-8 pt-12 text-white text-[28px] md:text-[38px] lg:text-[40px] lg:max-w-7xl">
           Your fully trusted platform to buy, trade and invest in crypto
@@ -160,7 +225,8 @@ export default function Home() {
         </div>
         <div className="w-[98%] lg:w-1/2 mx-auto p-3 md:p-20">
           <p className="text-[35px] md:text-[45px] font-bold break-words text-wrap">
-            How to trade with <span className="text-[#003399]">confidence</span>
+            How to trade with{" "}
+            <span className="text-[#003399]">confidence</span>
           </p>
           <p className="text-[16px] md:text-[20px] break-words text-wrap">
             Begin your trading journey with these easy steps
@@ -168,7 +234,13 @@ export default function Home() {
           <div className="flex flex-col gap-4">
             <div className="flex flex-row justify-center items-center gap-2 mt-2 border-[#E3E3E3]  border-[1px] rounded-lg p-4">
               <div className="w-[20%]">
-                <Image src="/step1.png" alt="Step 1" width={50} height={50} className="w-auto h-auto" />
+                <Image
+                  src="/step1.png"
+                  alt="Step 1"
+                  width={50}
+                  height={50}
+                  className="w-auto h-auto"
+                />
               </div>
               <div className="w-[80%]">
                 <p className="text-[16px] md:text-[20px] font-bold break-words text-wrap">
@@ -181,20 +253,33 @@ export default function Home() {
             </div>
             <div className="flex flex-row gap-2 mt-2 justify-center items-center border-[#E3E3E3]  border-[1px] rounded-lg p-4">
               <div className="w-[20%]">
-                <Image src="/step2.png" alt="Step 2" width={50} height={50} className="w-auto h-auto" />
+                <Image
+                  src="/step2.png"
+                  alt="Step 2"
+                  width={50}
+                  height={50}
+                  className="w-auto h-auto"
+                />
               </div>
               <div className="w-[80%]">
                 <p className="text-[16px] md:text-[20px] font-bold break-words text-wrap">
                   Fund your account
                 </p>
                 <p className="text-[14px] md:text-[16px] break-words text-wrap">
-                  Deposit funds into your account using your preferred payment method.
+                  Deposit funds into your account using your preferred payment
+                  method.
                 </p>
               </div>
             </div>
             <div className="flex flex-row gap-2 mt-2 justify-center items-center border-[#E3E3E3]  border-[1px] rounded-lg p-4">
               <div className="w-[20%]">
-                <Image src="/step3.png" alt="Step 3" width={50} height={50} className="w-auto h-auto" />
+                <Image
+                  src="/step3.png"
+                  alt="Step 3"
+                  width={50}
+                  height={50}
+                  className="w-auto h-auto"
+                />
               </div>
               <div className="w-[80%]">
                 <p className="text-[16px] md:text-[20px] font-bold break-words text-wrap">
@@ -243,7 +328,8 @@ export default function Home() {
           The trading platform you can trust
         </h2>
       </div>
-
     </div>
   );
 }
+
+export default Home;
