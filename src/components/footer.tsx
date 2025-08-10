@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 const Footer = () => {
   return (
     <motion.div
-      className="w-full bg-[#DFEFFE] lg:h-fit"
+      className="w-full bg-[#DFEFFE] lg:h-fit overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -27,6 +27,7 @@ const Footer = () => {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
           <Link href="/">
             <img src={"logo.png"} alt="Logo" className="h-8 md:h-10" />
@@ -60,6 +61,7 @@ const Footer = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
           <div className="lg:w-2/6 md:w-1/2 w-[50%] pl-[5%] flex flex-col gap-6 pb-[2rem] items-start">
             <h2 className="lg:text-[22px] text-[18px] font-semibold">COMPANY</h2>
@@ -85,6 +87,7 @@ const Footer = () => {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
           <div className="lg:w-3/6 w-full pl-[5%] flex flex-col gap-6 pb-[2rem] items-start">
             <h2 className="lg:text-[22px] text-[18px] font-semibold">LEGAL</h2>
@@ -108,6 +111,7 @@ const Footer = () => {
         initial={{ width: 0 }}
         animate={{ width: "100%" }}
         transition={{ duration: 1 }}
+
       />
       <motion.p
         className="w-[90%] md:w-[90%] px-2 mt-6 mx-auto max-w-7xl lg:w-[80%] lg:pl-0"
@@ -122,6 +126,7 @@ const Footer = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
       >
         The information available on our website is intended solely for
         educational, informational, and reference purposes regarding the

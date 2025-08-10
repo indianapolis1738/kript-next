@@ -71,8 +71,8 @@ const About = () => {
         <div className="flex justify-center items-center flex-col md:flex-row mt-30 gap-10">
           <motion.div
             className="w-98% md:w-1/2"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
             <Image
@@ -85,8 +85,8 @@ const About = () => {
           </motion.div>
           <motion.div
             className="w-98% md:w-1/2 p-2 md:p-0 flex flex-col justify-start items-center"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
             <p className="text-[25px] md:text-[35px] font-bold text-[#003399]">
@@ -101,8 +101,8 @@ const About = () => {
         <div className="flex justify-center items-center flex-col md:flex-row-reverse mt-10 md:mt-30 mb-30 gap-10">
           <motion.div
             className="w-98% md:w-1/2"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
             <Image
@@ -115,8 +115,8 @@ const About = () => {
           </motion.div>
           <motion.div
             className="w-98% md:w-1/2 p-2 md:p-0 flex flex-col justify-start items-center"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
             <p className="text-[25px] md:text-[35px] font-bold text-[#003399]">

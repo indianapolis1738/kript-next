@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Buy, Sell & Trade Cryptocurrency in Nigeria | Kript Africa",
   description:
-    "Kript lets you buy, sell, and trade cryptocurrencies like USDT, Bitcoin, and Ether instantly using Naira. Secure, fast, and friendly crypto experience in Nigeria.",
+    "Kript Africa is your trusted platform to buy, sell, and trade cryptocurrencies like USDT, Bitcoin, and Ether instantly using Naira. Experience a secure, fast, and user-friendly crypto platform tailored for Nigerians.",
   keywords: [
     "buy crypto in Nigeria",
     "sell crypto in Nigeria",
@@ -28,10 +28,14 @@ export const metadata: Metadata = {
     "stablecoins Nigeria",
     "crypto wallet Nigeria",
     "automated crypto purchase",
-    "secure crypto platform"
+    "secure crypto platform",
+    "crypto trading Nigeria",
+    "cryptocurrency Nigeria",
+    "crypto investment Nigeria",
   ],
   icons: {
-    icon: "/favicon.ico"
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "Kript Africa | Buy, Sell & Trade Crypto Securely in Nigeria",
@@ -41,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "Kript Africa",
     images: [
       {
-        url: "/logo.png",
+        url: "/fast.png",
         width: 1200,
         height: 630,
         alt: "Kript Africa - Crypto made simple",
@@ -55,11 +59,15 @@ export const metadata: Metadata = {
     title: "Buy, Sell & Trade Cryptocurrency in Nigeria | Kript Africa",
     description:
       "Easily buy and sell USDT, BTC, and other cryptocurrencies with Naira. Kript makes crypto simple and accessible to all Nigerians.",
-    images: ["/logo.png"],
+    images: ["/fast.png"],
     creator: "@kriptafrica",
   },
   alternates: {
     canonical: "https://kript.africa",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -70,14 +78,40 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Kript Africa",
+              url: "https://kript.africa",
+              logo: "https://kript.africa/fast.png",
+              sameAs: [
+                "https://x.com/kriptafrica",
+                "https://www.instagram.com/kript.africa/",
+                "https://www.linkedin.com/company/kript-africa",
+              ],
+              description:
+                "Kript Africa is a secure platform to buy, sell, and trade cryptocurrencies like USDT, Bitcoin, and Ether using Naira.",
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
+        {/* Navbar */}
         <div className="fixed w-full bg-white z-30">
           <Navbar />
-        </div> <br />
-        <br /> <br />
-       <div className="mt-[5%]">{children}</div> 
+        </div>
+<br /><br /><br />
+        {/* Main Content */}
+        <div className="mt-[5%]">{children}</div>
+
+        {/* Footer */}
         <Footer />
       </body>
     </html>
