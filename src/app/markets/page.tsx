@@ -205,24 +205,33 @@ const Page = () => {
                                                         e.currentTarget.src = "/yuan.png"; // fallback icon
                                                     }}
                                                 />
-                                                <span className="uppercase text-[15px] md:text-[20px]">{symbol.replace("usdt", "").replace("ngn", "USDT")}</span>
+                                                <span className="uppercase text-[15px] md:text-[20px]">
+                                                    {symbol.replace("usdt", "").replace("ngn", "USDT")}
+                                                </span>
                                             </div>
                                         </td>
                                         <td className="px-2 md:px-6 md:py-4 py-3 font-mono text-[15px] md:text-[18px]">
-                                            ${last.toLocaleString()}
-                                            <span className={`px-2 py-3 md:px-6 md:py-4 text-[10px] md:text-[18px] table-cell md:hidden ${isPositive ? "text-green-600" : "text-red-500"
-                                                }`}>
+                                            {/* Conditional check for USDTNGN */}
+                                            {symbol.toLowerCase().includes("usdtngn") ? "₦" : "$"}
+                                            {last.toLocaleString()}
+                                            <span
+                                                className={`px-2 py-3 md:px-6 md:py-4 text-[10px] md:text-[18px] table-cell md:hidden ${
+                                                    isPositive ? "text-green-600" : "text-red-500"
+                                                }`}
+                                            >
                                                 {isPositive ? `+${percentage}` : percentage}%
                                             </span>
                                         </td>
                                         <td
-                                            className={`hidden md:table-cell px-2 py-3 md:px-6 md:py-4 text-[16px] md:text-[18px] ${isPositive ? "text-green-600" : "text-red-500"
-                                                }`}
+                                            className={`hidden md:table-cell px-2 py-3 md:px-6 md:py-4 text-[16px] md:text-[18px] ${
+                                                isPositive ? "text-green-600" : "text-red-500"
+                                            }`}
                                         >
                                             {isPositive ? `+${percentage}` : percentage}% <br />
                                             <span
-                                                className={`text-[10px] hidden md:block ${isPositive ? "text-green-600" : "text-red-500"
-                                                    }`}
+                                                className={`text-[10px] hidden md:block ${
+                                                    isPositive ? "text-green-600" : "text-red-500"
+                                                }`}
                                             >
                                                 {isPositive ? `+${difference}` : difference} USD
                                             </span>
@@ -241,9 +250,7 @@ const Page = () => {
                         ) : (
                             <tr>
                                 <td colSpan={4} className="text-center py-4">
-                                    <p>
-                                        Pair not found. Please try a different one.
-                                    </p>
+                                    <p>Pair not found. Please try a different one.</p>
                                 </td>
                             </tr>
                         )}
