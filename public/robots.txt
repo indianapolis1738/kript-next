@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.kript.africa
+
+# Sitemaps
+Sitemap: https://www.kript.africa/sitemap.xml
