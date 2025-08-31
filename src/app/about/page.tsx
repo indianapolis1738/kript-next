@@ -59,7 +59,7 @@ const About = () => {
 
       {/* Vision and Mission Section */}
       <motion.div
-        className="max-w-6xl mx-auto"
+        className="max-w-6xl mx-auto p-4"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -68,7 +68,7 @@ const About = () => {
         <h2 className="text-[25px] md:text-[40px] font-bold text-center mt-10">
           Our Vision and Mission at a glance
         </h2>
-        <div className="flex justify-center items-center flex-col md:flex-row mt-30 gap-10">
+        <div className="flex justify-center items-center flex-col md:flex-row mt-30 gap-10 p-2">
           <motion.div
             className="w-98% md:w-1/2"
             initial={{ opacity: 0 }}
@@ -81,6 +81,7 @@ const About = () => {
               width={1000}
               height={500}
               className="w-full h-auto object-cover rounded-2xl"
+              loading='lazy'
             />
           </motion.div>
           <motion.div
@@ -118,6 +119,7 @@ const About = () => {
               width={1000}
               height={500}
               className="w-full h-auto object-cover rounded-2xl"
+              loading='lazy'
             />
           </motion.div>
           <motion.div

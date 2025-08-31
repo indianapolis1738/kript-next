@@ -140,6 +140,7 @@ const Home = () => {
             height={10}
             sizes="max-width: 100% max-width: 100%"
             className="mt-8 md:mt-0 w-full md:w-[90%] mx-auto h-[90%] md:p-15"
+            loading="lazy"
           />
         </div>
       </motion.div>
@@ -221,6 +222,7 @@ const Home = () => {
             height={10}
             sizes="max-width: 100% max-width: 100%"
             className="mt-8 md:mt-0 w-full md:w-[90%] mx-auto h-[90%] p-4 md:p-15 lg:p-0"
+            loading="lazy"
           />
         </div>
         <div className="w-[98%] lg:w-1/2 mx-auto p-3 md:p-20">
@@ -240,6 +242,7 @@ const Home = () => {
                   width={50}
                   height={50}
                   className="w-auto h-auto"
+                  loading="lazy"
                 />
               </div>
               <div className="w-[80%]">
@@ -259,6 +262,7 @@ const Home = () => {
                   width={50}
                   height={50}
                   className="w-auto h-auto"
+                  loading="lazy"
                 />
               </div>
               <div className="w-[80%]">
@@ -279,6 +283,7 @@ const Home = () => {
                   width={50}
                   height={50}
                   className="w-auto h-auto"
+                  loading="lazy"
                 />
               </div>
               <div className="w-[80%]">
@@ -322,7 +327,7 @@ const Home = () => {
       </div>
       <div className="w-full md:flex-row flex-col flex justify-center items-center bg-white h-[10rem] mt-10 z-0 gap-[0.5rem]">
         <div className="bg-[#DFEFFE] pl-3 pr-3 h-13 md:h-20 flex items-center rounded-full">
-          <img src={"logo.png"} alt="kript" className="h-6 md:h-10" />
+          <img src={"logo.png"} alt="kript" className="h-6 md:h-10" loading="lazy" />
         </div>
         <h2 className="text-[18px] md:text-[30px] font-semibold">
           The trading platform you can trust
