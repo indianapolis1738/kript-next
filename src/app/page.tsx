@@ -4,8 +4,42 @@ import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
+import Carousel from "react-multi-carousel";
+import review1 from '../../public/reviews/IMG_2087.jpg'
+import review2 from '../../public/reviews/IMG_2088.jpg'
+import review3 from '../../public/reviews/IMG_2089.jpg'
+import review4 from '../../public/reviews/IMG_2090.jpg'
+import review5 from '../../public/reviews/IMG_2091.jpg'
+import review6 from '../../public/reviews/IMG_2092.jpg'
+import review7 from '../../public/reviews/IMG_2099.jpg'
+import review8 from '../../public/reviews/IMG_2095.jpg'
+// import "react-multi-carousel/lib/styles.css";
+
+
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
+
+
 
 const Home = () => {
+
   return (
     <div className="">
       <motion.div
@@ -298,8 +332,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="bg-waves2 `lg:h-[25rem] w-full bg-[#003399] bg-center mt-[10%]">
-        <div className="flex flex-col lg:h-[25rem] mx-auto max-w-7xl lg:flex lg:flex-row gap-6 justify-between w-[90%] md:w-[80%] px-2 mt-[8%]">
+      <div className="bg-waves2 lg:h-[26rem] w-full bg-[#003399] bg-center mt-[10%]">
+        <div className="flex flex-col lg:h-[25rem] mx-auto max-w-7xl lg:flex lg:flex-row gap-6 justify-between w-[90%] md:w-[80%] px-2 mt-[8%] pb-6">
           <div className="lg:w-1/2 md:w-[88%] p-[5%] px-[0] flex flex-col gap-4">
             <p className="text-[25px] text-white md:text-[35px] font-bold">
               Try the crypto wallet <br />
@@ -325,6 +359,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      
       <div className="w-full md:flex-row flex-col flex justify-center items-center bg-white h-[10rem] mt-10 z-0 gap-[0.5rem]">
         <div className="bg-[#DFEFFE] pl-3 pr-3 h-13 md:h-20 flex items-center rounded-full">
           <img src={"logo.png"} alt="kript" className="h-6 md:h-10" loading="lazy" />
@@ -332,6 +367,39 @@ const Home = () => {
         <h2 className="text-[18px] md:text-[30px] font-semibold">
           The trading platform you can trust
         </h2>
+      </div>
+      <div className="pt-0 w-[100%] rounded-2xl md:mt-[-40px] top-1.5 ">
+        <h2 className="text-[16px] md:text-[18px] font-normal text-center md:pt-5">
+          Here’s what our users are saying
+        </h2>
+        <Marquee className="p-10 gap-2 items-center flex" speed={50} pauseOnHover>
+          <div>
+            <img src={review1.src} alt="Review" className="p-2 h-[120px] w-[400px] rounded-2xl" />
+          </div>
+          <div>
+            <img src={review2.src} alt="Review" className="p-2 h-[120px] w-[400px] rounded-2xl" />
+          </div>
+          <div>
+            <img src={review3.src} alt="Review" className="p-2 h-[120px] w-[400px] rounded-2xl" />
+          </div>
+          <div>
+            <img src={review4.src} alt="Review" className="p-2 h-[120px] w-[400px] rounded-2xl" />
+          </div>
+        </Marquee>
+        <Marquee className="p-10 pt-0 gap-2 items-center flex" direction="right" speed={50} pauseOnHover>
+          <div>
+            <img src={review5.src} alt="Review" className="p-2 h-[120px] w-[400px] rounded-2xl" />
+          </div>
+          <div>
+            <img src={review6.src} alt="Review" className="p-2 h-[120px] w-[400px] rounded-2xl" />
+          </div>
+          <div>
+            <img src={review7.src} alt="Review" className="p-2 h-[120px] w-[400px] rounded-2xl" />
+          </div>
+          <div>
+            <img src={review8.src} alt="Review" className="p-2 h-[120px] w-[400px] rounded-2xl" />
+          </div>
+        </Marquee>
       </div>
     </div>
   );

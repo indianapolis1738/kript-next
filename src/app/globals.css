@@ -6,4 +6,22 @@
       -webkit-appearance: none;
       margin: 0;
     }
+  }/* MUST be first */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap");
+
+/* Tailwind */
+@import "tailwindcss";
+
+/* Base layer overrides */
+@layer base {
+  html {
+    font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
