@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
-import Carousel from "react-multi-carousel";
 import review1 from '../../public/reviews/IMG_2087.jpg'
 import review2 from '../../public/reviews/IMG_2088.jpg'
 import review3 from '../../public/reviews/IMG_2089.jpg'
@@ -13,29 +12,6 @@ import review5 from '../../public/reviews/IMG_2091.jpg'
 import review6 from '../../public/reviews/IMG_2092.jpg'
 import review7 from '../../public/reviews/IMG_2099.jpg'
 import review8 from '../../public/reviews/IMG_2095.jpg'
-// import "react-multi-carousel/lib/styles.css";
-
-
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
-};
-
 
 
 const Home = () => {
