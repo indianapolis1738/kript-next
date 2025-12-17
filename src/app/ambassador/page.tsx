@@ -9,7 +9,7 @@ const page = () => {
             <div className="flex flex-col md:flex-row items-center max-w-7xl mx-auto py-2 px-4 gap-8 mt-10">
                 <div className="lg:w-1/2 text-center lg:text-left">
                     <h1 className='font-poppins font-semibold text-[38px] md:text-[48px] lg:text-[60px]'>
-                        Welcome to <span className='text-[#003399]'>Kript's</span> Alpha Ambassador Program
+                        Welcome to <span className='text-[#003399]'>Kript&apos;s</span> Alpha Ambassador Program
                     </h1>
                     <p className='leading-[48px] '>Turn your campus influence into lifetime passive income and win exciting monthly rewards with Kript.</p>
                     <button>
@@ -37,7 +37,7 @@ const page = () => {
                 </div>
                 <div className="w-full lg:w-1/2 md:p-4">
                     <h2 className='font-poppins font-semibold text-center lg:text-left text-[24px] md:text-[36px] lg:text-[40px] mb-4'>
-                        Become Part of Kript's Visionary Journey
+                        Become Part of Kript&apos;s Visionary Journey
                     </h2>
                     <p className='leading-[32px] text-[16px] md:text-[18px]'>
                         Are you a driven university student ready to thrive in a fast-moving, dynamic, and social tech environment? <br /> <br />
@@ -83,7 +83,7 @@ const page = () => {
             <div className="bg-[#DFEFFE] w-full py-48">
                 <div className="max-w-7xl mx-auto px-4">
                     <h2 className='font-poppins font-semibold text-[24px] md:text-[36px] lg:text-[40px] mb-4 text-center'>
-                        Why Join Kript's Alpha Ambassador Program?
+                        Why Join Kript&apos;s Alpha Ambassador Program?
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
