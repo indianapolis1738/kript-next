@@ -172,6 +172,14 @@ const Navbar = () => {
               Blog
             </Link>
           </li>
+          <li>
+            <Link
+              href="/ambassador"
+              className="hover:bg-[#DFEFFE] px-3 py-2 rounded"
+            >
+              Alphas
+            </Link>
+          </li>
         </motion.ul>
 
         {/* Download button */}
@@ -223,7 +231,7 @@ const Navbar = () => {
         }`}
         initial={{ opacity: 0 }}
         animate={{ opacity: isMenuOpen ? 1 : 0 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.1 }}
       >
         <div className="max-w-7xl mx-auto px-4 mt-2">
           <ul className="space-y-4 p-4 bg-[#DFEFFE] text-black rounded shadow-lg">
@@ -255,7 +263,7 @@ const Navbar = () => {
                 }`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isServicesOpen ? 1 : 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.1 }}
               >
                 <li>
                   <Link
@@ -332,6 +340,15 @@ const Navbar = () => {
                 Blog
               </Link>
             </li>
+
+          <li>
+            <Link
+              href="/ambassador"
+              className="hover:bg-[#DFEFFE] px-3 py-2 rounded"
+            >
+              Alphas
+            </Link>
+          </li>
           </ul>
         </div>
       </motion.div>
