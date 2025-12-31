@@ -28,7 +28,7 @@ const page = () => {
                 </div>
             </div>
             <div className="flex flex-col lg:flex-row items-center max-w-7xl mx-auto py-12 px-4 mt-0">
-                <div className="w-full lg:w-1/2 pl-0 md:p-24">
+                <div className="w-full lg:w-1/2 pl-0 md:p-24 overflow-hidden">
                     <img 
                         src={phone.src} 
                         alt="Ambassador Phone" 
