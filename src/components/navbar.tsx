@@ -205,20 +205,23 @@ const Navbar = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className={`w-10 h-10 ${isMenuOpen ? 'rotate-180deg' : ''}`}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
+          <div className="relative w-8 h-8">
+            <span
+              className={`absolute top-1/2 left-0 w-full h-[2px] bg-black transition-transform duration-300 ${
+                isMenuOpen ? 'rotate-45 translate-y-[6px]' : '-translate-y-[6px]'
+              }`}
+            ></span>
+            <span
+              className={`absolute top-1/2 left-0 w-full h-[2px] bg-black transition-opacity duration-300 ${
+                isMenuOpen ? 'opacity-0' : 'opacity-100'
+              }`}
+            ></span>
+            <span
+              className={`absolute top-1/2 left-0 w-full h-[2px] bg-black transition-transform duration-300 ${
+                isMenuOpen ? '-rotate-45 -translate-y-[6px]' : 'translate-y-[6px]'
+              }`}
+            ></span>
+          </div>
         </motion.button>
       </nav>
 
@@ -231,11 +234,11 @@ const Navbar = () => {
         }`}
         initial={{ opacity: 0 }}
         animate={{ opacity: isMenuOpen ? 1 : 0 }}
-        transition={{ duration: 0.1 }}
+        transition={{ duration: 0.3 }}
       >
         <div className="max-w-7xl mx-auto px-4 mt-2">
           <ul className="space-y-4 p-4 bg-[#DFEFFE] text-black rounded shadow-lg">
-            <li className="relative">
+          <li className="relative">
               <div
                 className="flex items-center justify-between px-3 py-2 hover:bg-[#DFEFFE] cursor-pointer"
                 onClick={toggleServices}
@@ -340,15 +343,15 @@ const Navbar = () => {
                 Blog
               </Link>
             </li>
-
-          <li>
-            <Link
-              href="/ambassador"
-              className="hover:bg-[#DFEFFE] px-3 py-2 rounded"
-            >
-              Alphas
-            </Link>
-          </li>
+            <li>
+              <Link
+                href="/ambassador"
+                onClick={closeMenu}
+                className="block px-3 py-2 hover:bg-[#DFEFFE]"
+              >
+                Alphas
+              </Link>
+            </li>
           </ul>
         </div>
       </motion.div>
