@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { FaWallet } from 'react-icons/fa';
 import { RiSwap2Fill } from 'react-icons/ri';
 import { FaMoneyBillTransfer } from 'react-icons/fa6';
@@ -12,6 +13,8 @@ import { motion } from 'framer-motion';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+
+  const pathname = usePathname(); // Get the current route
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -25,6 +28,9 @@ const Navbar = () => {
     setIsMenuOpen(false);
     setIsServicesOpen(false);
   };
+
+  // Function to check if a route is active
+  const isActive = (route: string) => pathname === route;
 
   return (
     <motion.header
@@ -86,83 +92,67 @@ const Navbar = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-7xl mx-auto">
                   <Link
                     href="/swap"
-                    className="block items-center justify-center px-10 py-10 rounded-2xl hover:bg-[#DFEFFE] gap-[40px]"
+                    className={`block items-center justify-center px-10 py-10 rounded-2xl gap-[40px] hover:bg-[#DFEFFE] ${
+                      isActive('/swap') ? 'bg-[#003399] text-white' : 'text-[#003399]'
+                    }`}
                   >
-                    <RiSwap2Fill size={39} color="#003399" /> <br />
-                    <p className="text-[20px] font-bold text-[#003399]">
-                      Instant Swap
-                    </p>
+                    <RiSwap2Fill size={39} /> <br />
+                    <p className="text-[20px] font-bold">Instant Swap</p>
                     <p className="text-[16px] font-normal">
                       Swap your crypto assets instantly with Kript Africa.
                     </p>
                   </Link>
                   <Link
                     href="/wallets"
-                    className="block items-center justify-center px-10 py-10 rounded-2xl hover:bg-[#DFEFFE] gap-[40px]"
+                    className={`block items-center justify-center px-10 py-10 rounded-2xl gap-[40px] hover:bg-[#DFEFFE] ${
+                      isActive('/wallets') ? 'bg-[#003399] text-white' : 'text-[#003399]'
+                    }`}
                   >
-                    <FaWallet size={35} color="#003399" /> <br />
-                    <p className="text-[20px] font-bold text-[#003399]">
-                      Wallets
-                    </p>
+                    <FaWallet size={35} /> <br />
+                    <p className="text-[20px] font-bold">Wallets</p>
                     <p className="text-[16px] font-normal">
-                      Securely store and manage your crypto assets with Kript
-                      Africa.
+                      Securely store and manage your crypto assets with Kript Africa.
                     </p>
                   </Link>
                   <Link
                     href="/bill"
-                    className="block items-center justify-center px-10 py-10 rounded-2xl hover:bg-[#DFEFFE] gap-6"
+                    className={`block items-center justify-center px-10 py-10 rounded-2xl gap-6 hover:bg-[#DFEFFE] ${
+                      isActive('/bill') ? 'bg-[#003399] text-white' : 'text-[#003399]'
+                    }`}
                   >
-                    <FaMoneyBillTransfer size={39} color="#003399" /> <br />
-                    <p className="text-[20px] font-bold text-[#003399]">
-                      Bill Payment
-                    </p>
-                    <p>
-                      Pay your bills effortlessly using cryptocurrency with
-                      Kript Africa.
-                    </p>
+                    <FaMoneyBillTransfer size={39} /> <br />
+                    <p className="text-[20px] font-bold">Bill Payment</p>
+                    <p>Pay your bills effortlessly using cryptocurrency with Kript Africa.</p>
                   </Link>
                   <Link
                     href="/recurring"
-                    className="block items-center justify-center px-10 py-10 rounded-2xl hover:bg-[#DFEFFE] gap-6"
+                    className={`block items-center justify-center px-10 py-10 rounded-2xl gap-6 hover:bg-[#DFEFFE] ${
+                      isActive('/recurring') ? 'bg-[#003399] text-white' : 'text-[#003399]'
+                    }`}
                   >
-                    <BiPurchaseTagAlt size={39} color="#003399" /> <br />
-                    <p className="text-[20px] font-bold text-[#003399]">
-                      Recurring Purchase
-                    </p>
-                    <p>
-                      Set up recurring purchases of your favorite
-                      cryptocurrencies with Kript Africa.
-                    </p>
+                    <BiPurchaseTagAlt size={39} /> <br />
+                    <p className="text-[20px] font-bold">Recurring Purchase</p>
+                    <p>Set up recurring purchases of your favorite cryptocurrencies with Kript Africa.</p>
                   </Link>
                 </div>
               </div>
             </motion.ul>
           </li>
-          <li>
-            <Link
-              href="/about"
-              className="hover:bg-[#DFEFFE] px-3 py-2 rounded"
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/support"
-              className="hover:bg-[#DFEFFE] px-3 py-2 rounded"
-            >
-              Support
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/markets"
-              className="hover:bg-[#DFEFFE] px-3 py-2 rounded"
-            >
-              Markets
-            </Link>
-          </li>
+
+          {/* Other links */}
+          {['/about', '/support', '/markets', '/ambassador'].map((route) => (
+            <li key={route}>
+              <Link
+                href={route}
+                className={`px-3 py-2 rounded hover:bg-[#DFEFFE] ${
+                  isActive(route) ? 'bg-[#003399] text-white' : ''
+                }`}
+              >
+                {route === '/about' ? 'About' : route === '/support' ? 'Support' : route === '/markets' ? 'Markets' : 'Alphas'}
+              </Link>
+            </li>
+          ))}
+
           <li>
             <Link
               href="https://blog.kript.africa"
@@ -170,14 +160,6 @@ const Navbar = () => {
               className="hover:bg-[#DFEFFE] px-3 py-2 rounded"
             >
               Blog
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/ambassador"
-              className="hover:bg-[#DFEFFE] px-3 py-2 rounded"
-            >
-              Alphas
             </Link>
           </li>
         </motion.ul>
@@ -238,7 +220,7 @@ const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto px-4 mt-2">
           <ul className="space-y-4 p-4 bg-[#DFEFFE] text-black rounded shadow-lg">
-          <li className="relative">
+            <li className="relative">
               <div
                 className="flex items-center justify-between px-3 py-2 hover:bg-[#DFEFFE] cursor-pointer"
                 onClick={toggleServices}
@@ -268,71 +250,48 @@ const Navbar = () => {
                 animate={{ opacity: isServicesOpen ? 1 : 0 }}
                 transition={{ duration: 0.1 }}
               >
-                <li>
-                  <Link
-                    href="/swap"
-                    onClick={closeMenu}
-                    className="block px-4 py-2 hover:bg-[#DFEFFE]"
-                  >
-                    Instant Swap
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/wallets"
-                    onClick={closeMenu}
-                    className="block px-4 py-2 hover:bg-[#DFEFFE]"
-                  >
-                    Wallets
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/bill"
-                    onClick={closeMenu}
-                    className="block px-4 py-2 hover:bg-[#DFEFFE]"
-                  >
-                    Bill Payment
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/recurring"
-                    onClick={closeMenu}
-                    className="block px-4 py-2 hover:bg-[#DFEFFE]"
-                  >
-                    Recurring Purchase
-                  </Link>
-                </li>
+                {['/swap', '/wallets', '/bill', '/recurring'].map((route) => (
+                  <li key={route}>
+                    <Link
+                      href={route}
+                      onClick={closeMenu}
+                      className={`block px-4 py-2 hover:bg-[#DFEFFE] ${
+                        isActive(route) ? 'bg-[#003399] text-white' : ''
+                      }`}
+                    >
+                      {route === '/swap'
+                        ? 'Instant Swap'
+                        : route === '/wallets'
+                        ? 'Wallets'
+                        : route === '/bill'
+                        ? 'Bill Payment'
+                        : 'Recurring Purchase'}
+                    </Link>
+                  </li>
+                ))}
               </motion.ul>
             </li>
-            <li>
-              <Link
-                href="/about"
-                onClick={closeMenu}
-                className="block px-3 py-2 hover:bg-[#DFEFFE]"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/support"
-                onClick={closeMenu}
-                className="block px-3 py-2 hover:bg-[#DFEFFE]"
-              >
-                Support
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/markets"
-                onClick={closeMenu}
-                className="block px-3 py-2 hover:bg-[#DFEFFE]"
-              >
-                Markets
-              </Link>
-            </li>
+
+            {['/about', '/support', '/markets', '/ambassador'].map((route) => (
+              <li key={route}>
+                <Link
+                  href={route}
+                  onClick={closeMenu}
+                  className={`block px-3 py-2 hover:bg-[#DFEFFE] ${
+                    isActive(route) ? 'bg-[#003399] text-white' : ''
+                  }`}
+                >
+                  {route === '/about'
+                    ? 'About'
+                    : route === '/support'
+                    ? 'Support'
+                    : route === '/markets'
+                    ? 'Markets'
+                    : 'Alphas'}
+                </Link>
+              </li>
+            ))}
+
             <li>
               <Link
                 href="https://blog.kript.africa"
@@ -341,15 +300,6 @@ const Navbar = () => {
                 className="block px-3 py-2 hover:bg-[#DFEFFE]"
               >
                 Blog
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/ambassador"
-                onClick={closeMenu}
-                className="block px-3 py-2 hover:bg-[#DFEFFE]"
-              >
-                Alphas
               </Link>
             </li>
           </ul>
