@@ -66,7 +66,7 @@ const Navbar = () => {
           transition={{ delay: 0.4 }}
         >
           <li className="relative group">
-            <span className="flex justify-center items-center gap-2 cursor-pointer px-3 py-2 rounded hover:bg-[#DFEFFE]">
+            <span className="flex justify-center items-center gap-2 cursor-pointer px-3 py-2 rounded hover:text-black hover:bg-[#DFEFFE]">
               Services
               <svg
                 className="w-4 h-4 transition-transform group-hover:rotate-180"
@@ -92,7 +92,7 @@ const Navbar = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-7xl mx-auto">
                   <Link
                     href="/swap"
-                    className={`block items-center justify-center px-10 py-10 rounded-2xl gap-[40px] hover:bg-[#DFEFFE] ${
+                    className={`block items-center justify-center px-10 py-10 rounded-2xl gap-[40px] hover:text-black hover:bg-[#DFEFFE] ${
                       isActive('/swap') ? 'bg-[#003399] text-white' : 'text-[#003399]'
                     }`}
                   >
@@ -104,7 +104,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     href="/wallets"
-                    className={`block items-center justify-center px-10 py-10 rounded-2xl gap-[40px] hover:bg-[#DFEFFE] ${
+                    className={`block items-center justify-center px-10 py-10 rounded-2xl gap-[40px] hover:text-black hover:bg-[#DFEFFE] ${
                       isActive('/wallets') ? 'bg-[#003399] text-white' : 'text-[#003399]'
                     }`}
                   >
@@ -116,7 +116,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     href="/bill"
-                    className={`block items-center justify-center px-10 py-10 rounded-2xl gap-6 hover:bg-[#DFEFFE] ${
+                    className={`block items-center justify-center px-10 py-10 rounded-2xl gap-6 hover:text-black hover:bg-[#DFEFFE] ${
                       isActive('/bill') ? 'bg-[#003399] text-white' : 'text-[#003399]'
                     }`}
                   >
@@ -126,7 +126,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     href="/recurring"
-                    className={`block items-center justify-center px-10 py-10 rounded-2xl gap-6 hover:bg-[#DFEFFE] ${
+                    className={`block items-center justify-center px-10 py-10 rounded-2xl gap-6 hover:text-black hover:bg-[#DFEFFE] ${
                       isActive('/recurring') ? 'bg-[#003399] text-white' : 'text-[#003399]'
                     }`}
                   >
@@ -144,7 +144,7 @@ const Navbar = () => {
             <li key={route}>
               <Link
                 href={route}
-                className={`px-3 py-2 rounded hover:bg-[#DFEFFE] ${
+                className={`px-3 py-2 rounded hover:text-black hover:bg-[#DFEFFE] ${
                   isActive(route) ? 'bg-[#003399] text-white' : ''
                 }`}
               >
@@ -157,7 +157,7 @@ const Navbar = () => {
             <Link
               href="https://blog.kript.africa"
               target="_blank"
-              className="hover:bg-[#DFEFFE] px-3 py-2 rounded"
+              className= "hover:text-black hover:bg-[#DFEFFE] px-3 py-2 rounded"
             >
               Blog
             </Link>
@@ -222,7 +222,7 @@ const Navbar = () => {
           <ul className="space-y-4 p-4 bg-[#DFEFFE] text-black rounded shadow-lg">
             <li className="relative">
               <div
-                className="flex items-center justify-between px-3 py-2 hover:bg-[#DFEFFE] cursor-pointer"
+                className="flex items-center justify-between px-3 py-2 hover:text-black hover:bg-[#DFEFFE] cursor-pointer"
                 onClick={toggleServices}
               >
                 <span>Services</span>
@@ -255,7 +255,7 @@ const Navbar = () => {
                     <Link
                       href={route}
                       onClick={closeMenu}
-                      className={`block px-4 py-2 hover:bg-[#DFEFFE] ${
+                      className={`block px-4 py-2 hover:text-black hover:bg-[#DFEFFE] ${
                         isActive(route) ? 'bg-[#003399] text-white' : ''
                       }`}
                     >
@@ -277,7 +277,7 @@ const Navbar = () => {
                 <Link
                   href={route}
                   onClick={closeMenu}
-                  className={`block px-3 py-2 hover:bg-[#DFEFFE] ${
+                  className={`block px-3 py-2 hover:text-black hover:bg-[#DFEFFE] ${
                     isActive(route) ? 'bg-[#003399] text-white' : ''
                   }`}
                 >
@@ -297,7 +297,7 @@ const Navbar = () => {
                 href="https://blog.kript.africa"
                 target="_blank"
                 onClick={closeMenu}
-                className="block px-3 py-2 hover:bg-[#DFEFFE]"
+                className="block px-3 py-2 hover:text-black hover:bg-[#DFEFFE]"
               >
                 Blog
               </Link>
