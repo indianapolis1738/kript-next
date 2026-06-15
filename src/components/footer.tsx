@@ -119,7 +119,7 @@ const Footer = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        Kript 2025. ALL RIGHTS RESERVED
+        Kript {new Date().getFullYear()}. ALL RIGHTS RESERVED
       </motion.p>
       <motion.p
         className="w-[90%] md:w-[90%] px-2 mt-6 pb-8 mx-auto max-w-7xl lg:pl-0 gap-2 text-[13px] lg:w-[80%]"
