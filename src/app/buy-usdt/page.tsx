@@ -31,7 +31,7 @@ export default function Page() {
     // }
 
     const last = market?.ticker?.last || '0';
-    const lastPrice = parseFloat(last.toString());
+    const lastPrice = parseFloat(last.toString()) + 6;
     const nairaValue = usdtAmount * lastPrice;
 
     return (
