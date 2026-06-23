@@ -12,9 +12,87 @@ import review5 from '../../public/reviews/IMG_2091.jpg'
 import review6 from '../../public/reviews/IMG_2092.jpg'
 import review7 from '../../public/reviews/IMG_2099.jpg'
 import review8 from '../../public/reviews/IMG_2095.jpg'
+import { useState } from "react";
+
+
+const FAQItem = ({ question, answer, index }: { question: string; answer: string; index: number }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <motion.div
+      className="border border-[#E4E7EC] rounded-lg overflow-hidden mb-4"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true }}
+    >
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex justify-between items-center p-6 hover:bg-[#F0F6FF] transition-colors"
+      >
+        <span className="text-[16px] md:text-[18px] font-semibold text-left">{question}</span>
+        <motion.svg
+          className="w-6 h-6 text-[#003399]"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </motion.svg>
+      </button>
+      <motion.div
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: isOpen ? 1 : 0, height: isOpen ? "auto" : 0 }}
+        transition={{ duration: 0.3 }}
+        className="overflow-hidden"
+      >
+        <div className="px-6 pb-6 text-[14px] md:text-[16px] text-gray-600">
+          {answer}
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
 
 
 const Home = () => {
+
+  const faqs = [
+    {
+      question: "What is Kript Africa?",
+      answer: "Kript Africa is a secure and user-friendly cryptocurrency platform designed to make buying, selling, and trading digital assets accessible to everyone. We offer instant swaps, secure wallets, bill payments, and recurring purchases all in one place."
+    },
+    {
+      question: "How do I create an account on Kript Africa?",
+      answer: "Creating an account is simple! Visit our website or download the Kript app, click 'Sign Up', provide your email address, set a strong password, and verify your identity. Once verified, you're ready to start trading."
+    },
+    {
+      question: "What cryptocurrencies can I trade on Kript Africa?",
+      answer: "Kript Africa supports a wide range of cryptocurrencies including Bitcoin (BTC), Ethereum (ETH), USDT, and many others. You can view the complete list of supported cryptocurrencies on our Markets page."
+    },
+    {
+      question: "Is Kript Africa safe and secure?",
+      answer: "Yes! Security is our top priority. Kript Africa uses industry-leading encryption, two-factor authentication (2FA), and complies with international security standards to protect your funds and personal information."
+    },
+    {
+      question: "What payment methods does Kript Africa accept?",
+      answer: "We accept bank transfers, and other local payment methods. You can deposit funds in Naira (NGN) and trade in USDT, Bitcoin, Ethereum, and other supported cryptocurrencies."
+    },
+    {
+      question: "How long does it take to withdraw my funds?",
+      answer: "Withdrawal times depend on your selected withdrawal method. Bank transfers typically takes 1-10 minutes. Instant withdrawals may also be available depending on your account verification level."
+    },
+    {
+      question: "Does Kript Africa charge fees?",
+      answer: "Kript Africa charges competitive and transparent fees for trading and withdrawals. Our fee structure is designed to be affordable for all users, from beginners to experienced traders."
+    },
+    {
+      question: "Is there customer support available?",
+      answer: "Absolutely! Our 24/7 customer support team is always ready to help. You can reach us through email at support@kript.africa, or through the live chat on our website."
+    }
+  ];
 
   return (
     <div className="">
@@ -335,7 +413,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="w-full md:flex-row flex-col flex justify-center items-center bg-white h-[10rem] mt-10 z-0 gap-[0.5rem]">
         <div className="bg-[#DFEFFE] pl-3 pr-3 h-13 md:h-20 flex items-center rounded-full">
           <img src={"logo.png"} alt="kript" className="h-6 md:h-10" loading="lazy" />
@@ -376,8 +454,90 @@ const Home = () => {
             <img src={review8.src} alt="Review" className="p-2 h-[120px] w-[400px] rounded-2xl" />
           </div>
         </Marquee>
+
       </div>
-    </div>
+
+      <motion.div
+        className="bg-gradient-to-b from-[#F0F6FF] to-white py-16 md:py-20 mt-20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-4xl mx-auto px-4">
+          {/* FAQ Header */}
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h2
+              className="text-[28px] md:text-[40px] font-bold mb-4 text-[#003399]"
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              Frequently Asked Questions
+            </motion.h2>
+            <motion.p
+              className="text-[16px] md:text-[18px] text-gray-600"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              Find answers to common questions about Kript Africa and how to get started with crypto trading.
+            </motion.p>
+          </motion.div>
+
+          {/* FAQ Grid */}
+          <motion.div
+            className="grid grid-cols-1 gap-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            {faqs.map((faq, index) => (
+              <FAQItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+                index={index}
+              />
+            ))}
+          </motion.div>
+
+          {/* CTA Section */}
+          <motion.div
+            className="mt-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-[16px] md:text-[18px] mb-6 text-gray-700">
+              Didn't find your answer? Our support team is here to help!
+            </p>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                href="mailto:support@kript.africa"
+                className="inline-block bg-[#003399] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#002080] transition-colors shadow-lg"
+              >
+                Contact Support
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </motion.div>
+
+    </div >
   );
 }
 
